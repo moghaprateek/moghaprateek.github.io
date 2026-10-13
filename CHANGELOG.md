@@ -2,6 +2,13 @@
 
 All notable changes to this portfolio. Newest first. Versions follow `major.minor.patch`.
 
+## 1.7.1 - 2026-10-13
+- Left sidebar no longer scrolls: it scales to fit the screen height, so the intro, skills, education and certifications are always fully visible.
+- Sidebar is narrower, giving the content on the right more room.
+- Education and Certifications cards are the same width and height.
+- Intro buttons show the icon above the label on desktop as well as phone; the CV button reads "CV".
+- Phone: Skills is always open (no collapse). Certifications stays collapsible.
+
 ## 1.7.0 - 2026-10-13
 - Two-column layout: one wide fixed sidebar on the left (intro, skills, then education and certifications side by side). The content on the right is the only part that scrolls.
 - Mobile intro card: the four buttons (Email, LinkedIn, GitHub, CV) now sit in one row with the icon on top and the label underneath, so text no longer overlaps.

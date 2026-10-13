@@ -438,12 +438,26 @@ footer{max-width:1680px}
 
 /* ===== WIDE SIDEBAR: intro, skills, then education | certifications ===== */
 @media(min-width:1101px){
-  .shell{max-width:1680px;grid-template-columns:clamp(520px,34vw,600px) minmax(0,1fr)}
-  .shell>.panel{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:12px;-webkit-mask-image:none;mask-image:none;padding-bottom:2px}
+  .shell{max-width:1680px;grid-template-columns:clamp(390px,25vw,440px) minmax(0,1fr)}
+  .shell>.panel{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:12px;-webkit-mask-image:none;mask-image:none;padding:0;overflow:hidden}
   .panel .intro,.panel .skills{grid-column:1/-1}
+  .shell>.panel .education,.shell>.panel .certs{align-self:stretch;min-width:0}
   .shell>.panel{gap:10px}.shell>.panel .card{padding:13px 16px}.panel .sg{margin-bottom:7px}.panel .cert{margin-bottom:5px}.panel .badge{margin-bottom:9px}.panel .cur{margin-bottom:8px}
   .panel .intro .links{grid-template-columns:repeat(4,minmax(0,1fr))}
   .panel .intro .links .pill{padding:8px 6px;gap:6px;font-size:.8rem;justify-content:center}
+}
+
+@media(min-width:1101px){
+  .shell>.panel .intro .links{gap:7px}
+  .shell>.panel .intro .links .pill{flex-direction:column;gap:3px;padding:8px 2px;min-height:54px;font-size:.74rem;white-space:nowrap}
+  .shell>.panel .intro .links .pill b{width:auto;font-size:1.05rem;line-height:1}
+  .shell>.panel .intro .links .pill .full{display:none}
+  .shell>.panel .intro .links .pill .short{display:inline}
+}
+@media(max-width:700px){
+  .skills h2{cursor:default;justify-content:flex-start;margin-bottom:12px}
+  .skills h2::after{display:none}
+  .skills:not(.open)>div{display:block}
 }
 /* browsers without backdrop-filter: fall back to near-solid cards */
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
@@ -678,17 +692,16 @@ renderExperience();
 /* fit the fixed side panels to the screen height (desktop) */
 function fitPanels(){
   document.querySelectorAll(".panel").forEach(p => {
-    const cards = Array.from(p.children).filter(c => !c.hidden);
-    cards.forEach(c => c.style.zoom = "");
+    p.style.zoom = ""; p.style.width = ""; p.style.maxHeight = ""; p.style.top = "";
     if(window.innerWidth <= 1100) return;
-    let z = 1;
-    for(let i=0;i<3;i++){
-      const need = p.scrollHeight, avail = p.clientHeight;
-      if(need <= avail + 1) break;
-      z = Math.max(.86, z * (avail / need));
-      cards.forEach(c => c.style.zoom = z);
-      if(z <= .86) break;
-    }
+    const top = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--nav")) + 20 || 84;
+    const avail = window.innerHeight - top - 20;
+    const set = z => { p.style.zoom = z; p.style.top = (top/z) + "px"; p.style.maxHeight = (avail/z) + "px"; };
+    const fits = z => { set(z); return p.scrollHeight * z <= avail + 1; };
+    if(fits(1)) { p.style.zoom = ""; p.style.width = ""; p.style.top = ""; p.style.maxHeight = ""; return; }
+    let lo = .62, hi = 1;
+    for(let i=0;i<9;i++){ const m = (lo+hi)/2; if(fits(m)) lo = m; else hi = m; }
+    set(lo);
   });
 }
 let fitTimer; window.addEventListener("resize", () => { clearTimeout(fitTimer); fitTimer = setTimeout(fitPanels, 120); });

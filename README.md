@@ -5,6 +5,7 @@ Java 17, Spring Boot, microservices, AWS, Kubernetes and Kafka, with experience 
 
 **Live site:** https://moghaprateek.github.io
 **LinkedIn:** https://www.linkedin.com/in/moghaprateek/
+**Version:** 1.7.1 (see [CHANGELOG.md](CHANGELOG.md))
 
 ![Portfolio screenshot](docs/screenshot.png)
 
@@ -12,12 +13,12 @@ Java 17, Spring Boot, microservices, AWS, Kubernetes and Kafka, with experience 
 
 A single-page portfolio built with plain HTML, CSS and JavaScript. There is no framework and no build step, so it publishes straight from GitHub Pages.
 
-- Two-column dashboard layout that uses wide screens (up to 1680px): a fixed sidebar on the left (intro, skills, then education and certifications side by side) and the content on the right, which is the only part that scrolls. Projects and GitHub sit side by side on very wide screens.
+- Two-column dashboard layout that uses wide screens (up to 1680px): a fixed sidebar on the left (intro, skills, then education and certifications side by side) and the content on the right, which is the only part that scrolls. The sidebar scales to fit the screen height, so it never scrolls on its own. Projects and GitHub sit side by side on very wide screens.
 - Floating pill menu on desktop and an iOS-style bottom tab bar on phones.
 - Experience timeline with filter buttons by theme (Cloud, Security, Payments and so on) and a "Show more" toggle for long bullet lists.
 - Projects, GitHub projects, contact links and a CV download button.
 - Dark and light mode, remembered per visitor.
-- Responsive: the sidebar stacks above the content on tablets. On phones everything is a single column with a short intro card, a one-row filter, and collapsible Skills and Certifications.
+- Responsive: the sidebar stacks above the content on tablets. On phones everything is a single column with a short intro card, a one-row filter, Skills always open and Certifications collapsible.
 - Search and sharing support: page title and description, structured data, a social preview image, `robots.txt` and `sitemap.xml`.
 
 ## Files
