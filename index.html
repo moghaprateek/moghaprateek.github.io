@@ -53,6 +53,7 @@
   --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.35);
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
@@ -155,9 +156,142 @@ footer{max-width:1360px;margin:0 auto;padding:8px 24px 32px;text-align:center;co
   .intro{order:1}#about{order:2}.skills{order:3}#experience{order:4}#projects{order:5}#github{order:6}.education{order:7}.certs{order:8}#contact{order:9}
   nav a.link{display:none}
 }
+
+/* ================= GLASS THEME ================= */
+:root{
+  --glass:rgba(255,255,255,.76);
+  --glass-soft:rgba(255,255,255,.58);
+  --glass-brd:rgba(255,255,255,.75);
+  --glass-hi:rgba(255,255,255,.9);
+  --glass-shadow:0 8px 32px rgba(15,60,56,.12);
+  --bg:#dfeceb; --border:rgba(15,60,56,.12); --chip:rgba(255,255,255,.55);
+  --muted:#3f4a47;
+  --b1:#2dd4bf; --b2:#6366f1; --b3:#38bdf8;
+}
+:root[data-theme="dark"]{
+  --glass:rgba(22,27,25,.76);
+  --glass-soft:rgba(255,255,255,.08);
+  --glass-brd:rgba(255,255,255,.14);
+  --glass-hi:rgba(255,255,255,.22);
+  --glass-shadow:0 8px 32px rgba(0,0,0,.45);
+  --bg:#070b0a; --border:rgba(255,255,255,.10); --chip:rgba(255,255,255,.07);
+  --muted:#b4bdb9;
+  --b1:#0f766e; --b2:#4338ca; --b3:#0369a1;
+}
+body{background:var(--bg);position:relative;min-height:100vh}
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.bg i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.6;animation:drift 22s ease-in-out infinite alternate}
+.bg i:nth-child(1){width:520px;height:520px;background:var(--b1);left:-120px;top:-80px}
+.bg i:nth-child(2){width:600px;height:600px;background:var(--b2);right:-160px;top:18%;animation-duration:28s;animation-delay:-8s}
+.bg i:nth-child(3){width:480px;height:480px;background:var(--b3);left:32%;bottom:-200px;animation-duration:25s;animation-delay:-4s}
+@keyframes drift{to{transform:translate(60px,-40px) scale(1.12)}}
+@media(prefers-reduced-motion:reduce){.bg i{animation:none}}
+
+header.nav{background:var(--glass);backdrop-filter:blur(10px) saturate(140%);-webkit-backdrop-filter:blur(10px) saturate(140%);border-bottom:1px solid var(--glass-brd)}
+.card{
+  background:var(--glass);
+  backdrop-filter:blur(10px) saturate(140%);-webkit-backdrop-filter:blur(10px) saturate(140%);
+  border:1px solid var(--glass-brd);
+  box-shadow:var(--glass-shadow), inset 0 1px 0 var(--glass-hi);
+}
+.proj,.stat{background:var(--glass-soft);border:1px solid var(--glass-brd);box-shadow:inset 0 1px 0 var(--glass-hi)}
+a.proj:hover{background:var(--glass);box-shadow:0 10px 28px rgba(15,60,56,.16), inset 0 1px 0 var(--glass-hi)}
+.pill{background:var(--glass-soft);border:1px solid var(--glass-brd);box-shadow:inset 0 1px 0 var(--glass-hi)}
+.pill.primary{background:var(--accent);border-color:rgba(255,255,255,.35);box-shadow:0 6px 18px color-mix(in srgb,var(--accent) 45%,transparent), inset 0 1px 0 rgba(255,255,255,.35)}
+.chip{background:var(--chip);border:1px solid var(--glass-brd)}
+.filters button{background:var(--glass-soft);border:1px solid var(--glass-brd)}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:rgba(255,255,255,.35)}
+.theme{background:var(--glass-soft);border:1px solid var(--glass-brd)}
+.badge{background:color-mix(in srgb,var(--accent) 16%,transparent);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+.job::before{background:var(--bg)}
+.avatar{box-shadow:0 8px 22px color-mix(in srgb,var(--accent) 50%,transparent), inset 0 1px 0 rgba(255,255,255,.4)}
+:root:not([data-theme="dark"]) .about p,:root:not([data-theme="dark"]) .job ul,:root:not([data-theme="dark"]) .proj p,:root:not([data-theme="dark"]) .lede,:root:not([data-theme="dark"]) .contact p{color:#34403d}
+
+/* brighter accent for text on dark glass (keeps button fills unchanged) */
+:root[data-theme="dark"] .role,:root[data-theme="dark"] .job .co,:root[data-theme="dark"] .logo,
+:root[data-theme="dark"] nav a.link.active,:root[data-theme="dark"] .badge,:root[data-theme="dark"] .stat b,
+:root[data-theme="dark"] .lede a,:root[data-theme="dark"] .proj .num,:root[data-theme="dark"] .more,
+:root[data-theme="dark"] .cert::before,:root[data-theme="dark"] .filters button:hover,:root[data-theme="dark"] .pill:hover{color:#2dd4bf}
+:root[data-theme="dark"] h2::before{background:#2dd4bf}
+:root[data-theme="dark"] .job::before{border-color:#2dd4bf}
+:root[data-theme="dark"] .more{border-color:#2dd4bf}
+
+/* ================= DEV / TERMINAL THEME ================= */
+:root[data-theme="dark"]{
+  --bg:#070a0f;
+  --glass:rgba(13,18,26,.80);
+  --glass-soft:rgba(255,255,255,.04);
+  --glass-brd:rgba(52,211,153,.16);
+  --glass-hi:rgba(52,211,153,.12);
+  --glass-shadow:0 10px 34px rgba(0,0,0,.55);
+  --chip:rgba(52,211,153,.07);
+  --muted:#9aa7b4;
+  --b1:#065f46; --b2:#0c4a6e; --b3:#1e1b4b;
+  --txt-acc:#34d399;
+}
+:root[data-theme="dark"] body{color:#e6edf3}
+:root[data-theme="dark"] .bg i{opacity:.32}
+/* grid + glow */
+.bg::before{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(52,211,153,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(52,211,153,.045) 1px,transparent 1px);
+  background-size:44px 44px;
+  -webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 78%);mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 78%)}
+:root:not([data-theme="dark"]) .bg::before{opacity:.5}
+/* floating code symbols */
+.syms{position:absolute;inset:0}
+.syms span{position:absolute;font-family:var(--mono);font-weight:700;color:#34d399;white-space:nowrap;user-select:none;animation:symfloat 14s ease-in-out infinite alternate}
+@keyframes symfloat{to{transform:translateY(-22px) rotate(2deg)}}
+:root:not([data-theme="dark"]) .syms span{color:#0f766e}
+@media(prefers-reduced-motion:reduce){.syms span{animation:none}}
+/* dev touches */
+h2::before{content:"//";width:auto;height:auto;background:none;font-family:var(--mono);font-weight:700;color:var(--accent);letter-spacing:-1px}
+:root[data-theme="dark"] h2::before{color:var(--txt-acc);background:none}
+.side h2::before{display:none}
+.whoami{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin:0 0 6px}
+.whoami b{color:var(--accent)}
+.whoami .cur-blink{display:inline-block;width:7px;height:13px;background:var(--accent);vertical-align:-2px;margin-left:3px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.whoami .cur-blink{animation:none}}
+/* bright green text + dark text on bright buttons (dark mode) */
+:root[data-theme="dark"] .role,:root[data-theme="dark"] .job .co,:root[data-theme="dark"] .logo,
+:root[data-theme="dark"] nav a.link.active,:root[data-theme="dark"] .badge,:root[data-theme="dark"] .stat b,
+:root[data-theme="dark"] .lede a,:root[data-theme="dark"] .proj .num,:root[data-theme="dark"] .more,
+:root[data-theme="dark"] .cert::before,:root[data-theme="dark"] .filters button:hover,:root[data-theme="dark"] .pill:hover,
+:root[data-theme="dark"] .whoami b{color:var(--txt-acc)}
+:root[data-theme="dark"] .job::before{border-color:var(--txt-acc)}
+:root[data-theme="dark"] .more{border-color:var(--txt-acc)}
+:root[data-theme="dark"] .pill.primary,:root[data-theme="dark"] .pill.primary:hover{color:#04130d;background:#34d399;border-color:#34d399;box-shadow:0 6px 20px rgba(52,211,153,.28)}
+:root[data-theme="dark"] .filters button[aria-pressed="true"]{background:#34d399;border-color:#34d399;color:#04130d}
+:root[data-theme="dark"] .avatar{background:#10b981;color:#04130d;box-shadow:0 8px 24px rgba(16,185,129,.35)}
+:root[data-theme="dark"] .badge{background:rgba(52,211,153,.12);border-color:rgba(52,211,153,.3)}
+:root[data-theme="dark"] .chip{color:#cfeee2}
+:root[data-theme="dark"] header.nav{background:rgba(8,12,18,.85)}
+
+/* ================= MINIMAL PROJECT LISTS ================= */
+.list{display:flex;flex-direction:column;margin:-6px -8px 0}
+.row{display:grid;grid-template-columns:34px minmax(0,1fr) 18px;column-gap:14px;align-items:start;padding:15px 8px;border-top:1px solid var(--glass-brd);text-decoration:none;color:inherit;border-radius:10px;transition:background .15s,padding-left .15s}
+.row:first-child{border-top:0}
+a.row:hover{background:color-mix(in srgb,var(--accent) 7%,transparent);padding-left:14px;border-top-color:transparent}
+a.row:hover + .row{border-top-color:transparent}
+.row .idx{font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--accent);padding-top:3px}
+.row h3{margin:0 0 3px;font-size:1rem;line-height:1.35}
+.row p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.5}
+.row .tags{display:block;font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:7px;line-height:1.5;opacity:.85}
+.row .arrow{color:var(--muted);padding-top:2px;transition:transform .15s,color .15s;text-align:right}
+a.row:hover .arrow{transform:translate(2px,-2px);color:var(--accent)}
+:root[data-theme="dark"] .row .idx,:root[data-theme="dark"] a.row:hover .arrow{color:var(--txt-acc)}
+:root[data-theme="dark"] a.row:hover{background:rgba(52,211,153,.07)}
+@media(max-width:700px){
+  .row{grid-template-columns:28px minmax(0,1fr) 16px}
+}
+/* browsers without backdrop-filter: fall back to near-solid cards */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .card,header.nav{background:var(--surface)}
+}
 </style>
 </head>
 <body>
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i><div class="syms" id="syms"></div></div>
 <header class="nav"><div class="in">
   <a class="logo" href="#top" aria-label="Home">&lt;PM/&gt;</a>
   <nav id="nav">
@@ -174,6 +308,7 @@ footer{max-width:1360px;margin:0 auto;padding:8px 24px 32px;text-align:center;co
   <aside class="panel side" aria-label="Profile">
     <section class="card intro">
       <div class="avatar" id="avatar"></div>
+      <p class="whoami"><b>$</b> whoami<span class="cur-blink"></span></p>
       <h1 id="name"></h1>
       <p class="role" id="title"></p>
       <p class="kw" id="kw"></p>
@@ -198,12 +333,12 @@ footer{max-width:1360px;margin:0 auto;padding:8px 24px 32px;text-align:center;co
     </section>
     <section class="card reveal" id="projects">
       <h2>Projects</h2>
-      <div class="grid" id="projectList"></div>
+      <div class="list" id="projectList"></div>
     </section>
     <section class="card reveal" id="github">
       <h2>GitHub Projects</h2>
       <p class="lede">Smaller personal projects, all public on my <a href="https://github.com/moghaprateek" target="_blank" rel="noopener noreferrer">GitHub profile</a>.</p>
-      <div class="grid" id="repoList"></div>
+      <div class="list" id="repoList"></div>
     </section>
     <section class="card contact reveal" id="contact">
       <h2>Let's Connect</h2>
@@ -220,109 +355,9 @@ footer{max-width:1360px;margin:0 auto;padding:8px 24px 32px;text-align:center;co
 <footer><span id="copy"></span></footer>
 <noscript><p style="text-align:center;padding:20px">Please enable JavaScript to view this portfolio.</p></noscript>
 
+<script src="config.js"></script>
 <script>
-/* EDIT YOUR CONTENT HERE – the rest renders it. */
-const CONFIG = {
-  name: "Prateek Mogha",
-  title: "Senior Software Engineer",
-  location: "Edinburgh, United Kingdom",
-  keywordsLine: "Java Developer · Backend Engineer · Microservices · Payments",
-  currently: "Currently Senior Software Engineer at Jaguar Land Rover, Manchester",
-  cv: "Prateek_Mogha_CV.pdf",
-  tagline: "Java 17 · Spring Boot · Microservices · AWS · Kubernetes · Kafka",
-  accent: "#0f766e",
-  social: {
-    email: "pmogha2008@gmail.com",
-    linkedin: "https://www.linkedin.com/in/moghaprateek/",
-    github: "https://github.com/moghaprateek"
-  },
-  about: [
-    "I'm a Senior Java Engineer with over 10 years of experience designing, building and supporting resilient backend and cloud-native systems across enterprise technology, payments, capital markets and automotive technology.",
-    "My day-to-day is Java 17, Spring Boot, microservices, AWS, Kubernetes and event-driven architecture with Kafka. I work across the full software development lifecycle: architecture, implementation, automated testing, CI/CD, security and production troubleshooting."
-  ],
-  skills: ["Java 17","Spring Boot","Microservices","Apache Kafka","AWS","Kubernetes","Docker","GitLab CI/CD","Spring Security","OAuth 2.0 / JWT","Datadog","JUnit 5"],
-  skillGroups: [
-    { name: "Backend", items: ["Java 17","Spring Boot 3.5","Spring Cloud","Spring Security","Spring Batch","Microservices"] },
-    { name: "Cloud & DevOps", items: ["AWS CDK","Lambda","DynamoDB","Kubernetes","Docker","GitLab CI/CD","Jenkins"] },
-    { name: "Messaging", items: ["Apache Kafka","AWS SQS","Azure Service Bus"] },
-    { name: "Security", items: ["OAuth 2.0","JWT","ForgeRock","Snyk","Trivy"] },
-    { name: "Testing & Observability", items: ["JUnit 5","Spock","Mockito","PIT","Datadog"] }
-  ],
-  stats: [
-    { value: "10+", label: "years in software engineering" },
-    { value: "~200 TPS", label: "payments at 99.9% SLA" },
-    { value: "50%", label: "faster CI/CD deployments" },
-    { value: "35%", label: "faster vulnerability detection" }
-  ],
-  projects: [
-    { name: "Mobile-Money Payments Platform", description: "Backend engineering for Airtel Money and Idea Money platforms serving millions of subscribers, supporting around 200 TPS with a 99.9% SLA under RBI payment guidelines.", skills: ["Java","Spring","Payments","RBI compliance"] },
-    { name: "Event-Driven Vulnerability Detection", description: "Pipeline that triggers security scans on code commits and processes results asynchronously, cutting vulnerability detection time by 35%.", skills: ["Kafka","Azure Service Bus","Spring Boot"] },
-    { name: "Cloud-Native & Serverless Java on AWS", description: "Spring Boot microservices on Kubernetes, AWS infrastructure in CDK (Java), and Lambda functions tuned with Powertools and CRaC/SnapStart.", skills: ["AWS CDK","Lambda","Kubernetes","GitLab CI/CD"] }
-  ],
-  repos: [
-    { name: "DataMining-Project", description: "Python notebooks analysing Lending Club loan data, with an automated exploratory data analysis report generated using Sweetviz.", link: "https://github.com/moghaprateek/DataMining-Project", skills: ["Python","Jupyter","Data Mining"] },
-    { name: "firebaseCRUD", description: "A basic demo of create, read, update and delete operations against Firebase, built with HTML, CSS and JavaScript.", link: "https://github.com/moghaprateek/firebaseCRUD", skills: ["JavaScript","Firebase","HTML/CSS"] },
-    { name: "singapore-dashboard", description: "A front-end dashboard project built with HTML, CSS and JavaScript.", link: "https://github.com/moghaprateek/singapore-dashboard", skills: ["JavaScript","HTML/CSS"] },
-  ],
-  experience: [
-    { company: "Jaguar Land Rover", title: "Senior Software Engineer", location: "Manchester, UK", dateRange: "Sep 2022 – Present", bullets: [
-      ["Develop and maintain Spring Boot 3 microservices using Java 17, Spring Cloud OpenFeign and DynamoDB.", ["Core"]],
-      ["Deploy containerised applications to Kubernetes using GitLab CI/CD and Kaniko.", ["DevOps","Cloud"]],
-      ["Design asynchronous event-driven solutions using Apache Kafka and AWS SQS for high-volume data streams.", ["Event-driven"]],
-      ["Develop AWS infrastructure using AWS CDK with Java, and manage AWS Secrets Manager and STS configuration.", ["Cloud"]],
-      ["Build AWS Lambda functions for JWT authorisation, ENI IP lookup and command proxying, using Lambda Powertools and CRaC/SnapStart for serverless Java performance.", ["Cloud"]],
-      ["Implement ForgeRock JWT validation using Nimbus JOSE and Spring Security filter chains.", ["Security"]],
-      ["Build observability with Micrometer, Datadog, Feign metrics, Lambda tracing and structured JSON logging, including automated Slack and email alerts at a 5% failure-rate threshold.", ["Observability"]],
-      ["Integrate Snyk, Trivy, OWASP Dependency-Check and Semgrep into automated CI/CD security checks.", ["Security","DevOps"]],
-      ["Enforce quality gates with Checkstyle, Spock, JUnit 5 and PIT mutation testing (100% mutation threshold, 80% coverage threshold).", ["Testing"]],
-      ["Mentor junior developers and take part in sprint planning, retrospectives and backlog refinement.", ["Leadership"]]
-    ]},
-    { company: "Bramfitt Technology Labs", title: "Java Developer", location: "London, UK", dateRange: "Feb 2022 – Sep 2022", bullets: [
-      ["Designed an event-driven vulnerability detection pipeline using Apache Kafka and Azure Service Bus.", ["Event-driven","Security"]],
-      ["Reduced vulnerability detection time by 35% by triggering scans on code commits and processing results asynchronously.", ["Security"]],
-      ["Built Spring Boot and ReactJS role-based access with database-level enforcement, including SSO authentication and auditable access governance.", ["Security","Core"]],
-      ["Worked on Microsoft Azure in an Agile/Scrum environment.", ["Cloud"]]
-    ]},
-    { company: "Mahindra Comviva", title: "Technical Lead", location: "Gurugram, India", dateRange: "Apr 2020 – Jan 2021", bullets: [
-      ["Led backend engineering for the Airtel Money and Idea Money payment platforms serving millions of subscribers.", ["Payments","Leadership"]],
-      ["Supported approximately 200 TPS and a 99.9% SLA under peak transactional loads.", ["Payments"]],
-      ["Worked within RBI payment system guidelines and telecom operator compliance rules for transaction processing and customer data.", ["Payments"]],
-      ["Redesigned database schemas and implemented data partitioning to improve transactional performance.", ["Core"]],
-      ["Reduced CI/CD deployment time by 50%, from 12 hours to 6 hours.", ["DevOps"]],
-      ["Guided junior developers on day-to-day development and troubleshooting.", ["Leadership"]]
-    ]},
-    { company: "Genpact Headstrong Capital Markets", title: "Consultant – Software Engineer", location: "Noida, India", dateRange: "Dec 2018 – Apr 2020", bullets: [
-      ["Developed backend and UI components with Spring MVC for a US healthcare SaaS platform, covering patient billing, clinical user management and data operations under US healthcare compliance.", ["Core"]],
-      ["Supported a live capital markets trading application under high request volumes.", ["Core"]],
-      ["Diagnosed production failures through root-cause analysis and delivered real-time fixes, eliminating trading downtime incidents.", ["Core"]],
-      ["Collaborated with engineering, product and business stakeholders throughout the SDLC.", ["Leadership"]]
-    ]},
-    { company: "Infosys", title: "Technology Analyst", location: "Bhubaneswar, India", dateRange: "Oct 2017 – Aug 2018", bullets: [
-      ["Developed Spring Batch processing for insurance benefits and premium calculations across high-volume regulated datasets.", ["Core"]],
-      ["Reduced manual regression testing by 28% through JUnit and Mockito automation in Jenkins CI/CD.", ["Testing","DevOps"]],
-      ["Participated in Agile/Scrum development and maintenance.", ["Core"]]
-    ]},
-    { company: "Comviva", title: "Java Developer", location: "Gurugram, India", dateRange: "Jul 2015 – Oct 2017", bullets: [
-      ["Developed USSD payment applications for Airtel and Idea using Java Servlets, JSP and Spring.", ["Payments","Core"]],
-      ["Integrated SOAP and RESTful web services.", ["Core"]],
-      ["Improved database query performance by 20% through optimisation.", ["Core"]],
-      ["Increased automated test coverage to 85% and reduced production incidents by 26%.", ["Testing"]]
-    ]}
-  ],
-  education: [
-    { school: "United Kingdom", degree: "MSc in Data Science", dateRange: "2022" },
-    { school: "Maharaja Surajmal Institute of Technology, Delhi, India", degree: "B.Tech in Information Technology", dateRange: "2014" },
-    { school: "Father Agnel Polytechnic, Delhi, India", degree: "Diploma in Computer Science", dateRange: "2011" }
-  ],
-  certifications: [
-    "Microsoft Certified: Azure AI Fundamentals",
-    "Microsoft Certified: Security, Compliance & Identity Fundamentals",
-    "Spring Boot Microservices (LinkedIn Learning)",
-    "Learning Jenkins (LinkedIn Learning)"
-  ],
-  visibleRoles: 3 // roles shown before "Show earlier roles"
-};
-
+if(typeof CONFIG==="undefined"){document.body.insertAdjacentHTML("afterbegin","<p style=\"padding:20px;font-family:sans-serif\">config.js is missing or has a syntax error. Open the browser console for details.</p>");throw new Error("CONFIG not loaded");}
 /* ---------------- rendering ---------------- */
 const $ = id => document.getElementById(id);
 function el(tag, cls, text){ const n=document.createElement(tag); if(cls) n.className=cls; if(text!==undefined) n.textContent=text; return n; }
@@ -369,19 +404,22 @@ CONFIG.education.forEach(e => {
   $("eduList").appendChild(d);
 });
 
-function cards(list, target, numbered){
+function cards(list, target){
   list.forEach((p,i)=>{
-    const c = el(p.link ? "a" : "div", "proj");
-    if(p.link){ c.href=p.link; c.target="_blank"; c.rel="noopener noreferrer"; c.appendChild(el("span","arrow","↗")); }
-    c.appendChild(el("span","num", numbered ? String(i+1).padStart(2,"0") : "repo"));
-    c.appendChild(el("h3","",p.name));
-    c.appendChild(el("p","",p.description));
-    const chips = el("div","chips"); p.skills.forEach(x => chips.appendChild(el("span","chip",x)));
-    c.appendChild(chips); $(target).appendChild(c);
+    const row = el(p.link ? "a" : "div", "row");
+    if(p.link){ row.href=p.link; row.target="_blank"; row.rel="noopener noreferrer"; }
+    row.appendChild(el("span","idx",String(i+1).padStart(2,"0")));
+    const body = el("div","body");
+    body.appendChild(el("h3","",p.name));
+    body.appendChild(el("p","",p.description));
+    body.appendChild(el("span","tags",p.skills.join(" · ")));
+    row.appendChild(body);
+    row.appendChild(el("span","arrow",p.link ? "↗" : ""));
+    $(target).appendChild(row);
   });
 }
-cards(CONFIG.projects,"projectList",true);
-cards(CONFIG.repos,"repoList",false);
+cards(CONFIG.projects,"projectList");
+cards(CONFIG.repos,"repoList");
 
 const state = { tag: "All", expanded: false };
 const allTags = ["All", ...Array.from(new Set(CONFIG.experience.flatMap(j => j.bullets.flatMap(b => b[1]))))];
@@ -418,11 +456,37 @@ function renderExperience(){
 }
 renderExperience();
 
+/* hide any section whose list is empty in config.js */
+[["projects","#projects"],["repos","#github"],["skillGroups",".skills"],["certifications",".certs"],["education",".education"],["experience","#experience"],["stats",null]].forEach(([key,sel])=>{
+  if(CONFIG[key] && CONFIG[key].length) return;
+  if(sel){ const n=document.querySelector(sel); if(n) n.hidden = true; const l=document.querySelector('nav a[href="'+sel+'"]'); if(l) l.hidden = true; }
+  else { const n=$("stats"); if(n) n.hidden = true; }
+});
+
+
+/* floating developer symbols in the background (seeded so layout is stable) */
+(function(){
+  const box=document.getElementById("syms"); if(!box) return;
+  const g=["</>","{ }","=>","();","[ ]","#","$_","&&","::","0x1F","01","@Bean","//","<T>","->","JVM","K8s","SQL","API","200 OK","main()","git","mvn","λ","!=","*","fn","@","/**","%"];
+  let seed=7; const r=()=>{seed=(seed*16807)%2147483647;return (seed-1)/2147483646;};
+  for(let i=0;i<64;i++){
+    const sp=document.createElement("span");
+    sp.textContent=g[Math.floor(r()*g.length)];
+    sp.style.left=(i%3===0 ? (r()<.5 ? r()*4 : 94+r()*5) : r()*96).toFixed(1)+"%";
+    sp.style.top=(r()*96).toFixed(1)+"%";
+    sp.style.fontSize=(18+Math.floor(r()*70))+"px";
+    sp.style.opacity=(0.16+r()*0.2).toFixed(2);
+    sp.style.animationDuration=(10+r()*14).toFixed(1)+"s";
+    sp.style.animationDelay="-"+(r()*14).toFixed(1)+"s";
+    box.appendChild(sp);
+  }
+})();
+
 (function(){
   const root = document.documentElement; let saved = null;
   try { saved = localStorage.getItem("theme"); } catch(e){}
   const dark = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
-  root.dataset.theme = saved || (dark ? "dark" : "light");
+  root.dataset.theme = saved || "dark";
   $("theme").addEventListener("click", () => {
     const next = root.dataset.theme === "dark" ? "light" : "dark";
     root.dataset.theme = next;
