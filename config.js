@@ -121,6 +121,8 @@ const CONFIG = {
     "Spring Boot Microservices (LinkedIn Learning)",
     "Learning Jenkins (LinkedIn Learning)"
   ],
+  // number of bullets shown per role before "Show more" (all are shown when filtering)
+  visibleBullets: 5,
   // number of roles shown before the "Show earlier roles" button
   visibleRoles: 3 // roles shown before "Show earlier roles"
 };

@@ -284,6 +284,129 @@ a.row:hover .arrow{transform:translate(2px,-2px);color:var(--accent)}
 @media(max-width:700px){
   .row{grid-template-columns:28px minmax(0,1fr) 16px}
 }
+
+/* ================= FLOATING MENU ================= */
+:root{--nav:74px}
+html{scroll-padding-top:100px}
+header.nav{position:fixed;top:0;left:0;right:0;height:auto;background:none;border:0;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none;pointer-events:none;z-index:50}
+header.nav .in{
+  pointer-events:auto;position:relative;
+  width:max-content;max-width:calc(100% - 28px);height:auto;margin:14px auto 0;padding:6px 8px 6px 18px;gap:8px;
+  justify-content:center;border-radius:999px;
+  background:var(--glass);border:1px solid var(--glass-brd);
+  backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);
+  box-shadow:0 12px 34px rgba(0,0,0,.35), inset 0 1px 0 var(--glass-hi)}
+:root:not([data-theme="dark"]) header.nav .in{box-shadow:0 12px 30px rgba(15,60,56,.16), inset 0 1px 0 var(--glass-hi)}
+header.nav .logo{margin-right:6px}
+nav{gap:2px}
+nav a.link{display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px}
+nav a.link .ic{display:none}
+.theme{margin-left:2px;width:34px;height:34px;border-radius:50%}
+.shell{padding-top:94px}
+
+
+/* remove the old full-width bar behind the floating menu */
+header.nav,:root[data-theme="dark"] header.nav,:root:not([data-theme="dark"]) header.nav{background:none!important;border:0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:none!important}
+
+/* phones: iOS-style floating tab bar */
+@media(max-width:700px){
+  header.nav .in{width:auto;max-width:none;margin:10px 14px 0;padding:0;gap:0;justify-content:space-between;border-radius:0;background:none;border:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+  header.nav .logo{margin:0;padding:8px 14px;border-radius:999px;background:var(--glass);border:1px solid var(--glass-brd);backdrop-filter:blur(14px) saturate(150%);-webkit-backdrop-filter:blur(14px) saturate(150%);box-shadow:0 6px 18px rgba(0,0,0,.28)}
+  .theme{width:40px;height:40px;margin:0;box-shadow:0 6px 18px rgba(0,0,0,.28);background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+  nav#nav{position:fixed;pointer-events:auto;left:14px;right:14px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;
+    display:flex;justify-content:space-around;gap:0;padding:7px 6px;border-radius:30px;
+    background:var(--glass);border:1px solid var(--glass-brd);
+    backdrop-filter:blur(18px) saturate(170%);-webkit-backdrop-filter:blur(18px) saturate(170%);
+    box-shadow:0 14px 40px rgba(0,0,0,.5), inset 0 1px 0 var(--glass-hi)}
+  nav a.link{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:3px;flex:1;min-width:0;padding:8px 2px;border-radius:22px;font-size:.64rem;line-height:1.1;letter-spacing:.01em}
+  nav a.link .ic{display:block;width:22px;height:22px}
+  nav a.link.active{background:var(--accent-soft)}
+  :root[data-theme="dark"] nav a.link.active{background:rgba(52,211,153,.14)}
+  .shell{padding:70px 16px 108px}
+  footer{padding-bottom:96px}
+}
+
+/* more solid menu surfaces so page text doesn't show through */
+:root{--navglass:rgba(255,255,255,.93)}
+:root[data-theme="dark"]{--navglass:rgba(10,14,20,.92)}
+header.nav .in{background:var(--navglass)}
+nav#nav{background:var(--navglass)}
+@media(max-width:700px){
+  header.nav .in,:root:not([data-theme="dark"]) header.nav .in{background:none;box-shadow:none}
+  header.nav .logo,.theme{background:var(--navglass)}
+  nav#nav{background:var(--navglass)}
+}
+
+/* ================= WIDE DESKTOP + PHONE REFINEMENTS ================= */
+.shell{max-width:1680px;grid-template-columns:clamp(290px,19vw,340px) minmax(0,1fr) clamp(290px,19vw,340px)}
+footer{max-width:1680px}
+.duo{display:flex;flex-direction:column;gap:20px}
+@media(min-width:1500px){
+  .duo{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr)}
+}
+@supports(min-height:100dvh){body{min-height:100dvh}}
+
+/* compact intro card */
+.idrow{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.idrow .avatar{width:48px;height:48px;border-radius:14px;font-size:1rem;margin:0;flex:none}
+.idtext{min-width:0}
+.idtext .whoami{margin:0 0 1px}
+.idtext h1{font-size:1.3rem;line-height:1.15}
+.idtext .role{margin:1px 0 0;font-size:.92rem}
+.kw{margin-bottom:6px}
+.badge{margin-bottom:12px}
+.intro .links{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.intro .links .pill{padding:8px 9px;gap:7px;font-size:.82rem;white-space:nowrap;justify-content:flex-start;min-width:0}
+.intro .links .pill b{width:16px}
+/* denser side panels */
+.side.panel .card{padding:16px}
+.side h2{margin-bottom:9px}
+.chip{font-size:.7rem;padding:3px 7px}
+.chips{gap:5px}
+.sg{margin-bottom:10px}
+.sg h3{margin-bottom:5px;font-size:.78rem}
+.cert{font-size:.82rem;margin-bottom:7px;gap:8px}
+.edu{margin-bottom:8px}
+.edu b{font-size:.88rem}
+.edu span{font-size:.78rem;line-height:1.35;display:block}
+.panel{gap:12px}
+
+.morebul{font:inherit;font-size:.82rem;cursor:pointer;margin-top:6px;padding:5px 12px;border-radius:999px;border:1px solid var(--glass-brd);background:var(--glass-soft);color:var(--muted);transition:.15s}
+.morebul:hover{border-color:var(--accent);color:var(--accent)}
+:root[data-theme="dark"] .morebul:hover{color:var(--txt-acc);border-color:var(--txt-acc)}
+
+/* phones */
+@media(max-width:700px){
+  .duo{display:contents}
+  .shell{padding:66px 12px 104px;gap:12px}
+  .card{padding:16px;border-radius:18px}
+  h2{margin-bottom:12px}
+  .intro .links{grid-template-columns:1fr 1fr 46px 46px}
+  .intro .links .k-email{order:1}.intro .links .k-cv{order:2}.intro .links .k-linkedin{order:3}.intro .links .k-github{order:4}
+  .intro .links .k-linkedin .lbl,.intro .links .k-github .lbl{display:none}
+  .intro .links .k-linkedin,.intro .links .k-github{justify-content:center;padding:8px 0}
+  .intro .links .pill{min-height:44px;font-size:.88rem}
+  .filters{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px 14px;padding:2px 16px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .filters::-webkit-scrollbar{display:none}
+  .filters button{flex:none;min-height:38px;padding:6px 14px}
+  .morebul,.more{min-height:42px}
+  .theme{width:44px;height:44px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .job{margin-bottom:22px}
+  /* tap-to-expand skills and certifications */
+  .skills h2,.certs h2{cursor:pointer;justify-content:space-between;margin-bottom:0}
+  .skills.open h2,.certs.open h2{margin-bottom:12px}
+  .skills h2::after,.certs h2::after{content:"+";font-size:1.2rem;color:var(--muted);letter-spacing:0;text-transform:none}
+  .skills.open h2::after,.certs.open h2::after{content:"–"}
+  .skills:not(.open)>div,.certs:not(.open)>div{display:none}
+  header.nav .logo,header.nav .theme{transition:transform .25s ease,opacity .25s ease}
+  header.nav.nav-hide .logo,header.nav.nav-hide .theme{transform:translateY(-70px);opacity:0;pointer-events:none}
+}
+@media(max-width:700px) and (orientation:landscape){
+  nav a.link{flex-direction:row;gap:6px;font-size:.78rem}
+  nav a.link .ic{width:18px;height:18px}
+  .shell{padding-bottom:84px}
+}
 /* browsers without backdrop-filter: fall back to near-solid cards */
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
   .card,header.nav{background:var(--surface)}
@@ -294,23 +417,27 @@ a.row:hover .arrow{transform:translate(2px,-2px);color:var(--accent)}
 <div class="bg" aria-hidden="true"><i></i><i></i><i></i><div class="syms" id="syms"></div></div>
 <header class="nav"><div class="in">
   <a class="logo" href="#top" aria-label="Home">&lt;PM/&gt;</a>
-  <nav id="nav">
-    <a class="link" href="#about">About</a>
-    <a class="link" href="#experience">Experience</a>
-    <a class="link" href="#projects">Projects</a>
-    <a class="link" href="#github">GitHub</a>
-    <a class="link" href="#contact">Contact</a>
-    <button class="theme" id="theme" aria-label="Toggle dark mode" title="Toggle dark mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg></button>
+  <nav id="nav" aria-label="Sections">
+    <a class="link" href="#about"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>About</span></a>
+    <a class="link" href="#experience"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg><span>Experience</span></a>
+    <a class="link" href="#projects"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Projects</span></a>
+    <a class="link" href="#github"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></svg><span>GitHub</span></a>
+    <a class="link" href="#contact"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Contact</span></a>
   </nav>
+  <button class="theme" id="theme" aria-label="Toggle dark mode" title="Toggle dark mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg></button>
 </div></header>
 
 <div class="shell" id="top">
   <aside class="panel side" aria-label="Profile">
     <section class="card intro">
-      <div class="avatar" id="avatar"></div>
-      <p class="whoami"><b>$</b> whoami<span class="cur-blink"></span></p>
-      <h1 id="name"></h1>
-      <p class="role" id="title"></p>
+      <div class="idrow">
+        <div class="avatar" id="avatar"></div>
+        <div class="idtext">
+          <p class="whoami"><b>$</b> whoami<span class="cur-blink"></span></p>
+          <h1 id="name"></h1>
+          <p class="role" id="title"></p>
+        </div>
+      </div>
       <p class="kw" id="kw"></p>
       <p class="loc" id="loc"></p>
       <p class="cur" id="cur"></p>
@@ -331,6 +458,7 @@ a.row:hover .arrow{transform:translate(2px,-2px);color:var(--accent)}
       <div class="filters" id="filters" role="group" aria-label="Filter experience by theme"></div>
       <div class="timeline" id="timeline"></div>
     </section>
+    <div class="duo">
     <section class="card reveal" id="projects">
       <h2>Projects</h2>
       <div class="list" id="projectList"></div>
@@ -340,6 +468,7 @@ a.row:hover .arrow{transform:translate(2px,-2px);color:var(--accent)}
       <p class="lede">Smaller personal projects, all public on my <a href="https://github.com/moghaprateek" target="_blank" rel="noopener noreferrer">GitHub profile</a>.</p>
       <div class="list" id="repoList"></div>
     </section>
+    </div>
     <section class="card contact reveal" id="contact">
       <h2>Let's Connect</h2>
       <p>Open to senior backend engineering roles across the UK. Email or LinkedIn is the best way to reach me.</p>
@@ -380,8 +509,9 @@ function socialLinks(target, inline){
   ];
   defs.forEach(([k,icon,label,href])=>{
     if(!href) return;
-    const a = el("a", "pill" + (k==="email" ? " primary":""));
-    a.appendChild(el("b","",icon)); a.appendChild(document.createTextNode(label));
+    const a = el("a", "pill k-"+k + (k==="email" ? " primary":""));
+    a.setAttribute("aria-label",label);
+    a.appendChild(el("b","",icon)); a.appendChild(el("span","lbl",label));
     a.href = href;
     if(k==="cv"){ a.setAttribute("download",""); a.target="_blank"; a.rel="noopener"; }
     else if(k!=="email"){ a.target="_blank"; a.rel="noopener noreferrer"; }
@@ -429,10 +559,12 @@ allTags.forEach(t => {
   b.addEventListener("click", () => { state.tag=t; renderExperience(); });
   $("filters").appendChild(b);
 });
+const openRoles = new Set();
 function renderExperience(){
   Array.from($("filters").children).forEach(b => b.setAttribute("aria-pressed", b.dataset.tag===state.tag ? "true":"false"));
   const box = $("timeline"); box.textContent = "";
   const filtering = state.tag !== "All";
+  const limit = CONFIG.visibleBullets || 5;
   let hidden = 0, shown = 0;
   CONFIG.experience.forEach((j, idx) => {
     const bullets = j.bullets.filter(b => !filtering || b[1].includes(state.tag));
@@ -443,9 +575,19 @@ function renderExperience(){
     job.appendChild(el("h3","",j.title));
     const co = el("div",""); co.appendChild(el("span","co",j.company)); co.appendChild(document.createTextNode(" · " + j.location));
     job.appendChild(co); job.appendChild(el("div","when",j.dateRange));
+    const collapsible = !filtering && bullets.length > limit;
+    const isOpen = openRoles.has(idx);
+    const list = collapsible && !isOpen ? bullets.slice(0, limit) : bullets;
     const ul = el("ul");
-    bullets.forEach(b => { const li = el("li","",b[0]); if(filtering) li.appendChild(el("span","t",state.tag)); ul.appendChild(li); });
-    job.appendChild(ul); box.appendChild(job);
+    list.forEach(b => { const li = el("li","",b[0]); if(filtering) li.appendChild(el("span","t",state.tag)); ul.appendChild(li); });
+    job.appendChild(ul);
+    if(collapsible){
+      const t = el("button","morebul", isOpen ? "Show less" : "Show " + (bullets.length - limit) + " more"); t.type="button";
+      t.setAttribute("aria-expanded", isOpen ? "true":"false");
+      t.addEventListener("click", () => { isOpen ? openRoles.delete(idx) : openRoles.add(idx); renderExperience(); fitPanels(); });
+      job.appendChild(t);
+    }
+    box.appendChild(job);
   });
   if(!shown) box.appendChild(el("p","empty","No matching experience."));
   if(hidden){
@@ -469,7 +611,8 @@ renderExperience();
   const box=document.getElementById("syms"); if(!box) return;
   const g=["</>","{ }","=>","();","[ ]","#","$_","&&","::","0x1F","01","@Bean","//","<T>","->","JVM","K8s","SQL","API","200 OK","main()","git","mvn","λ","!=","*","fn","@","/**","%"];
   let seed=7; const r=()=>{seed=(seed*16807)%2147483647;return (seed-1)/2147483646;};
-  for(let i=0;i<64;i++){
+  const N = window.innerWidth<=700 ? 22 : 64;
+  for(let i=0;i<N;i++){
     const sp=document.createElement("span");
     sp.textContent=g[Math.floor(r()*g.length)];
     sp.style.left=(i%3===0 ? (r()<.5 ? r()*4 : 94+r()*5) : r()*96).toFixed(1)+"%";
@@ -492,6 +635,50 @@ renderExperience();
     root.dataset.theme = next;
     try { localStorage.setItem("theme", next); } catch(e){}
   });
+})();
+
+
+/* fit the fixed side panels to the screen height (desktop) */
+function fitPanels(){
+  document.querySelectorAll(".panel").forEach(p => {
+    const cards = Array.from(p.children).filter(c => !c.hidden);
+    cards.forEach(c => c.style.zoom = "");
+    if(window.innerWidth <= 1100) return;
+    let z = 1;
+    for(let i=0;i<3;i++){
+      const need = p.scrollHeight, avail = p.clientHeight;
+      if(need <= avail + 1) break;
+      z = Math.max(.86, z * (avail / need));
+      cards.forEach(c => c.style.zoom = z);
+      if(z <= .86) break;
+    }
+  });
+}
+let fitTimer; window.addEventListener("resize", () => { clearTimeout(fitTimer); fitTimer = setTimeout(fitPanels, 120); });
+window.addEventListener("load", fitPanels);
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitPanels);
+fitPanels();
+
+/* phone: tap-to-expand Skills and Certifications */
+["skills","certs"].forEach(cls => {
+  const sec = document.querySelector("." + cls); if(!sec) return;
+  const h = sec.querySelector("h2");
+  h.tabIndex = 0; h.setAttribute("role","button"); h.setAttribute("aria-expanded","false");
+  const toggle = () => { const o = sec.classList.toggle("open"); h.setAttribute("aria-expanded", o ? "true":"false"); };
+  h.addEventListener("click", toggle);
+  h.addEventListener("keydown", e => { if(e.key==="Enter" || e.key===" "){ e.preventDefault(); toggle(); } });
+});
+
+/* phone: hide the top logo/theme buttons while scrolling down, show on scroll up */
+(function(){
+  const hdr = document.querySelector("header.nav"); let last = window.scrollY;
+  window.addEventListener("scroll", () => {
+    if(window.innerWidth > 700){ hdr.classList.remove("nav-hide"); last = window.scrollY; return; }
+    const y = window.scrollY;
+    if(y > last + 8 && y > 120) hdr.classList.add("nav-hide");
+    else if(y < last - 8) hdr.classList.remove("nav-hide");
+    last = y;
+  }, {passive:true});
 })();
 
 (function(){

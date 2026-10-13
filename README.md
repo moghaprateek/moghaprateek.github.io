@@ -12,13 +12,12 @@ Java 17, Spring Boot, microservices, AWS, Kubernetes and Kafka, with experience 
 
 A single-page portfolio built with plain HTML, CSS and JavaScript. There is no framework and no build step, so it publishes straight from GitHub Pages.
 
-- Dark developer theme: near-black background, emerald accents, a faint grid and floating code symbols (`</>`, `{ }`, `git`, `@Bean` and more). Light mode is available from the toggle.
-- Three-column dashboard layout: profile and education (left), content (middle), skills and certifications (right). The side panels stay in place while the middle scrolls.
-- Frosted-glass cards with low blur, so the text stays easy to read.
-- Experience timeline with filter buttons by theme (Cloud, Security, Payments and so on).
-- Projects and GitHub projects shown as minimal lists, plus contact links and a CV download button.
-- Dark by default for new visitors; the choice is remembered per visitor.
-- Responsive: side panels stack above the content on tablets, and everything becomes a single column on phones.
+- Three-column dashboard layout that uses wide screens (up to 1680px): profile and education (left), content (middle), skills and certifications (right). The side panels stay in place while the middle scrolls. Projects and GitHub sit side by side on very wide screens.
+- Floating pill menu on desktop and an iOS-style bottom tab bar on phones.
+- Experience timeline with filter buttons by theme (Cloud, Security, Payments and so on) and a "Show more" toggle for long bullet lists.
+- Projects, GitHub projects, contact links and a CV download button.
+- Dark and light mode, remembered per visitor.
+- Responsive: side panels stack above the content on tablets. On phones everything is a single column with a short intro card, a one-row filter, and collapsible Skills and Certifications.
 - Search and sharing support: page title and description, structured data, a social preview image, `robots.txt` and `sitemap.xml`.
 
 ## Files
@@ -51,7 +50,7 @@ GitHub Pages refreshes within a minute or two. Use a hard refresh (Ctrl+F5) if y
 | Name, job title, location | `name`, `title`, `location` |
 | Keyword line under the name | `keywordsLine` |
 | "Currently ..." line | `currently` |
-| Theme colour (buttons, highlights) | `accent` (hex colour, currently `#10b981`) |
+| Theme colour | `accent` (hex colour) |
 | Email, LinkedIn, GitHub | `social` (delete a line to hide that button) |
 | About text | `about` (one string per paragraph) |
 | Headline numbers | `stats` |
@@ -61,17 +60,10 @@ GitHub Pages refreshes within a minute or two. Use a hard refresh (Ctrl+F5) if y
 | Jobs and bullets | `experience`, newest first |
 | Education and certifications | `education`, `certifications` |
 | Roles shown before "Show earlier roles" | `visibleRoles` |
+| Bullets shown per role before "Show more" | `visibleBullets` |
 
 Each experience bullet is written as `["text", ["Tag1", "Tag2"]]`. The tags create the filter buttons.
 To hide a section, set its list to `[]`.
-
-### Changing the look
-
-Styling lives in `index.html`, in the `<style>` block.
-
-- **Fewer or fainter background symbols:** in the script near the bottom, find the line `for(let i=0;i<64;i++)` and lower the number. The opacity is the line starting `sp.style.opacity`.
-- **Card transparency and blur:** the `--glass` colour values and the `blur(10px)` settings in the "GLASS THEME" part of the styles.
-- **Bright green text in dark mode:** `--txt-acc` in the "DEV / TERMINAL THEME" part. Change it together with `accent` in `config.js` if you switch colours.
 
 ### Updating the CV
 
