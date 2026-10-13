@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prateek Mogha – Senior Software Engineer</title>
+<meta name="description" content="Portfolio of Prateek Mogha, Senior Java Engineer based in Edinburgh. Java 17, Spring Boot, microservices, AWS, Kubernetes and Kafka.">
+<meta property="og:title" content="Prateek Mogha – Senior Software Engineer">
+<meta property="og:description" content="Senior Java Engineer with 10+ years of experience in payments, capital markets and automotive technology.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --accent:#0f766e;
+  --bg:#fafaf9; --surface:#ffffff; --text:#1c1917; --muted:#57534e; --border:#e7e5e4; --chip:#f0efed;
+  --accent-soft:color-mix(in srgb,var(--accent) 10%,transparent);
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.05);
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+:root[data-theme="dark"]{
+  --bg:#0f1210; --surface:#171b19; --text:#ecefed; --muted:#a3aaa6; --border:#262c29; --chip:#1f2522;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+/* header */
+header.nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--border)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:var(--mono);font-weight:700;text-decoration:none;color:var(--accent);font-size:1.05rem}
+nav{display:flex;align-items:center;gap:4px}
+nav a.link{font-size:.9rem;text-decoration:none;color:var(--muted);padding:6px 10px;border-radius:8px;transition:.15s}
+nav a.link:hover{color:var(--text);background:var(--chip)}
+nav a.link.active{color:var(--accent);background:var(--accent-soft)}
+.theme{border:1px solid var(--border);background:var(--surface);color:var(--text);width:36px;height:36px;border-radius:10px;cursor:pointer;font-size:1rem;margin-left:6px}
+.theme:hover{border-color:var(--accent)}
+@media(max-width:640px){nav a.link{display:none}}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:84px 0 72px;text-align:center;border-bottom:1px solid var(--border)}
+.hero .sym{position:absolute;font-family:var(--mono);color:var(--accent);opacity:.13;font-size:2.2rem;font-weight:700;user-select:none;animation:float 9s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px)}}
+.hero .wrap{position:relative}
+.hello{font-size:1.1rem;color:var(--muted);margin:0 0 6px}
+h1{font-size:clamp(2.2rem,6vw,3.4rem);line-height:1.1;margin:0 0 10px;letter-spacing:-.02em}
+h1 span{color:var(--accent)}
+.role{font-size:1.3rem;color:var(--muted);margin:0}
+.meta{font-family:var(--mono);font-size:.85rem;color:var(--muted);margin:14px 0 28px}
+.socials{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid var(--border);background:var(--surface);border-radius:999px;font-size:.92rem;text-decoration:none;transition:.15s;box-shadow:var(--shadow)}
+.pill:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+.pill.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.pill.primary:hover{color:#fff;filter:brightness(1.08)}
+/* sections */
+section{padding:64px 0}
+section+section{border-top:1px solid var(--border)}
+h2{font-size:1.7rem;margin:0 0 24px;letter-spacing:-.01em;display:flex;align-items:center;gap:12px}
+h2::before{content:"";width:28px;height:4px;border-radius:4px;background:var(--accent)}
+.about p{margin:0 0 14px;color:var(--muted);font-size:1.04rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{font-family:var(--mono);font-size:.8rem;padding:5px 11px;border-radius:8px;background:var(--chip);border:1px solid var(--border)}
+.chip.accent{background:var(--accent-soft);border-color:transparent;color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:28px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:1.6rem;color:var(--accent);line-height:1.2}
+.stat span{font-size:.85rem;color:var(--muted)}
+/* projects */
+.grid{display:grid;gap:16px}
+.card{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow);transition:.18s;position:relative}
+a.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.card .num{font-family:var(--mono);color:var(--accent);font-size:.85rem;font-weight:700}
+.card h3{margin:2px 0 6px;font-size:1.15rem}
+.card p{margin:0 0 12px;color:var(--muted);font-size:.97rem}
+.card .arrow{position:absolute;top:20px;right:22px;color:var(--muted)}
+/* experience */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:-8px 0 28px}
+.filters button{font:inherit;font-size:.82rem;cursor:pointer;padding:5px 13px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--muted);transition:.15s}
+.filters button:hover{border-color:var(--accent);color:var(--accent)}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.timeline{position:relative;margin-left:8px;padding-left:28px;border-left:2px solid var(--border)}
+.job{position:relative;margin-bottom:34px}
+.job::before{content:"";position:absolute;left:-37px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.job h3{margin:0;font-size:1.15rem}
+.job .co{color:var(--accent);font-weight:600}
+.job .when{font-family:var(--mono);font-size:.8rem;color:var(--muted);margin:2px 0 10px}
+.job ul{margin:0;padding-left:18px;color:var(--muted)}
+.job li{margin-bottom:6px;font-size:.97rem}
+.job li .t{display:inline-block;font-family:var(--mono);font-size:.68rem;margin-left:6px;padding:1px 7px;border-radius:6px;background:var(--chip);vertical-align:1px}
+.more{font:inherit;cursor:pointer;margin-top:4px;padding:9px 18px;border-radius:10px;border:1px dashed var(--accent);background:transparent;color:var(--accent)}
+.more:hover{background:var(--accent-soft)}
+.empty{color:var(--muted)}
+/* education */
+.edu{margin-bottom:18px}
+.edu h3{margin:0;font-size:1.05rem}
+.edu .sub{color:var(--muted);font-size:.93rem}
+.certs{margin-top:34px}
+.certs h3{font-size:1.05rem;margin:0 0 12px}
+/* contact + footer */
+.cta{text-align:center}
+.cta p{color:var(--muted);max-width:520px;margin:0 auto 22px}
+.cta h2{justify-content:center}
+footer{border-top:1px solid var(--border);padding:34px 0;text-align:center;color:var(--muted);font-size:.9rem}
+footer .fn{display:flex;gap:16px;justify-content:center;margin:12px 0}
+footer .fn a{text-decoration:none}
+footer .fn a:hover{color:var(--accent)}
+/* reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero .sym{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Home">&lt;PM/&gt;</a>
+    <nav id="nav">
+      <a class="link" href="#about">About</a>
+      <a class="link" href="#projects">Projects</a>
+      <a class="link" href="#experience">Experience</a>
+      <a class="link" href="#education">Education</a>
+      <a class="link" href="#contact">Contact</a>
+      <button class="theme" id="theme" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <span class="sym" style="left:6%;top:18%">&lt;/&gt;</span>
+    <span class="sym" style="left:84%;top:14%;animation-delay:-3s">=&gt;</span>
+    <span class="sym" style="left:12%;top:68%;animation-delay:-5s">{ }</span>
+    <span class="sym" style="left:88%;top:66%;animation-delay:-2s">::</span>
+    <span class="sym" style="left:46%;top:8%;animation-delay:-6s">;</span>
+    <div class="wrap">
+      <p class="hello">Hello! 👋</p>
+      <h1>I'm <span id="name"></span></h1>
+      <p class="role" id="title"></p>
+      <p class="meta" id="meta"></p>
+      <div class="socials" id="socials"></div>
+    </div>
+  </div>
+
+  <section id="about" class="about"><div class="wrap reveal">
+    <h2>About Me</h2>
+    <div id="aboutText"></div>
+    <div class="chips" id="skills"></div>
+    <div class="stats" id="stats"></div>
+  </div></section>
+
+  <section id="projects"><div class="wrap reveal">
+    <h2>Projects</h2>
+    <div class="grid" id="projectList"></div>
+  </div></section>
+
+  <section id="experience"><div class="wrap reveal">
+    <h2>Experience</h2>
+    <div class="filters" id="filters" role="group" aria-label="Filter experience by theme"></div>
+    <div class="timeline" id="timeline"></div>
+  </div></section>
+
+  <section id="education"><div class="wrap reveal">
+    <h2>Education</h2>
+    <div id="eduList"></div>
+    <div class="certs">
+      <h3>Certifications</h3>
+      <div class="chips" id="certList"></div>
+    </div>
+  </div></section>
+
+  <section id="contact" class="cta"><div class="wrap reveal">
+    <h2>Let's Connect</h2>
+    <p>Open to senior backend engineering roles across the UK. The best way to reach me is email or LinkedIn.</p>
+    <div class="socials" id="contactLinks"></div>
+  </div></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong id="fname"></strong><br>Senior Software Engineer
+    <div class="fn">
+      <a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a>
+    </div>
+    <div id="copy"></div>
+  </div>
+</footer>
+<noscript><p style="text-align:center;padding:20px">Please enable JavaScript to view this portfolio.</p></noscript>
+
+<script>
+/* ============================================================
+   EDIT YOUR CONTENT HERE – the rest of the file renders it.
+   ============================================================ */
+const CONFIG = {
+  name: "Prateek Mogha",
+  title: "Senior Software Engineer",
+  location: "Edinburgh, United Kingdom",
+  tagline: "Java 17 · Spring Boot · Microservices · AWS · Kubernetes · Kafka",
+  accent: "#0f766e",
+  social: {
+    email: "pmogha2008@gmail.com",
+    linkedin: "https://linkedin.com/in/moghaprateek",
+    github: "https://github.com/moghaprateek",
+    youtube: "https://www.youtube.com/@abroadkick"
+  },
+  about: [
+    "I'm a Senior Java Engineer with over 10 years of experience designing, building and supporting resilient backend and cloud-native systems across enterprise technology, payments, capital markets and automotive technology.",
+    "My day-to-day is Java 17, Spring Boot, microservices, AWS, Kubernetes and event-driven architecture with Kafka. I work across the full software development lifecycle: architecture, implementation, automated testing, CI/CD, security and production troubleshooting.",
+    "Outside work, I run Abroad Kick, a YouTube channel with practical advice on life in the UK for international students and professionals planning to move or work here."
+  ],
+  skills: ["Java 17","Spring Boot","Microservices","Apache Kafka","AWS","Kubernetes","Docker","GitLab CI/CD","Spring Security","OAuth 2.0 / JWT","Datadog","JUnit 5"],
+  stats: [
+    { value: "10+", label: "years in software engineering" },
+    { value: "~200 TPS", label: "payments at 99.9% SLA" },
+    { value: "50%", label: "faster CI/CD deployments" },
+    { value: "35%", label: "faster vulnerability detection" }
+  ],
+  projects: [
+    { name: "Mobile-Money Payments Platform", description: "Backend engineering for Airtel Money and Idea Money platforms serving millions of subscribers, supporting around 200 TPS with a 99.9% SLA under RBI payment guidelines.", skills: ["Java","Spring","Payments","RBI compliance"] },
+    { name: "Event-Driven Vulnerability Detection", description: "Pipeline that triggers security scans on code commits and processes results asynchronously, cutting vulnerability detection time by 35%.", skills: ["Kafka","Azure Service Bus","Spring Boot"] },
+    { name: "Cloud-Native & Serverless Java on AWS", description: "Spring Boot microservices on Kubernetes, AWS infrastructure in CDK (Java), and Lambda functions tuned with Powertools and CRaC/SnapStart.", skills: ["AWS CDK","Lambda","Kubernetes","GitLab CI/CD"] },
+    { name: "Abroad Kick (YouTube)", description: "A channel helping international students and professionals plan life, study and work in the UK.", link: "https://www.youtube.com/@abroadkick", skills: ["Content","UK life","Careers"] }
+  ],
+  experience: [
+    { company: "Jaguar Land Rover", title: "Senior Software Engineer", location: "Manchester, UK", dateRange: "Sep 2022 – Present", bullets: [
+      ["Develop and maintain Spring Boot 3 microservices using Java 17, Spring Cloud OpenFeign and DynamoDB.", ["Core"]],
+      ["Deploy containerised applications to Kubernetes using GitLab CI/CD and Kaniko.", ["DevOps","Cloud"]],
+      ["Design asynchronous event-driven solutions using Apache Kafka and AWS SQS for high-volume data streams.", ["Event-driven"]],
+      ["Develop AWS infrastructure using AWS CDK with Java, and manage AWS Secrets Manager and STS configuration.", ["Cloud"]],
+      ["Build AWS Lambda functions for JWT authorisation, ENI IP lookup and command proxying, using Lambda Powertools and CRaC/SnapStart for serverless Java performance.", ["Cloud"]],
+      ["Implement ForgeRock JWT validation using Nimbus JOSE and Spring Security filter chains.", ["Security"]],
+      ["Build observability with Micrometer, Datadog, Feign metrics, Lambda tracing and structured JSON logging, including automated Slack and email alerts at a 5% failure-rate threshold.", ["Observability"]],
+      ["Integrate Snyk, Trivy, OWASP Dependency-Check and Semgrep into automated CI/CD security checks.", ["Security","DevOps"]],
+      ["Enforce quality gates with Checkstyle, Spock, JUnit 5 and PIT mutation testing (100% mutation threshold, 80% coverage threshold).", ["Testing"]],
+      ["Mentor junior developers and take part in sprint planning, retrospectives and backlog refinement.", ["Leadership"]]
+    ]},
+    { company: "Bramfitt Technology Labs", title: "Java Developer", location: "London, UK", dateRange: "Feb 2022 – Sep 2022", bullets: [
+      ["Designed an event-driven vulnerability detection pipeline using Apache Kafka and Azure Service Bus.", ["Event-driven","Security"]],
+      ["Reduced vulnerability detection time by 35% by triggering scans on code commits and processing results asynchronously.", ["Security"]],
+      ["Built Spring Boot and ReactJS role-based access with database-level enforcement, including SSO authentication and auditable access governance.", ["Security","Core"]],
+      ["Worked on Microsoft Azure in an Agile/Scrum environment.", ["Cloud"]]
+    ]},
+    { company: "Mahindra Comviva", title: "Technical Lead", location: "Gurugram, India", dateRange: "Apr 2020 – Jan 2021", bullets: [
+      ["Led backend engineering for the Airtel Money and Idea Money payment platforms serving millions of subscribers.", ["Payments","Leadership"]],
+      ["Supported approximately 200 TPS and a 99.9% SLA under peak transactional loads.", ["Payments"]],
+      ["Worked within RBI payment system guidelines and telecom operator compliance rules for transaction processing and customer data.", ["Payments"]],
+      ["Redesigned database schemas and implemented data partitioning to improve transactional performance.", ["Core"]],
+      ["Reduced CI/CD deployment time by 50%, from 12 hours to 6 hours.", ["DevOps"]],
+      ["Guided junior developers on day-to-day development and troubleshooting.", ["Leadership"]]
+    ]},
+    { company: "Genpact Headstrong Capital Markets", title: "Consultant – Software Engineer", location: "Noida, India", dateRange: "Dec 2018 – Apr 2020", bullets: [
+      ["Developed backend and UI components with Spring MVC for a US healthcare SaaS platform, covering patient billing, clinical user management and data operations under US healthcare compliance.", ["Core"]],
+      ["Supported a live capital markets trading application under high request volumes.", ["Core"]],
+      ["Diagnosed production failures through root-cause analysis and delivered real-time fixes, eliminating trading downtime incidents.", ["Core"]],
+      ["Collaborated with engineering, product and business stakeholders throughout the SDLC.", ["Leadership"]]
+    ]},
+    { company: "Infosys", title: "Technology Analyst", location: "Bhubaneswar, India", dateRange: "Oct 2017 – Aug 2018", bullets: [
+      ["Developed Spring Batch processing for insurance benefits and premium calculations across high-volume regulated datasets.", ["Core"]],
+      ["Reduced manual regression testing by 28% through JUnit and Mockito automation in Jenkins CI/CD.", ["Testing","DevOps"]],
+      ["Participated in Agile/Scrum development and maintenance.", ["Core"]]
+    ]},
+    { company: "Comviva", title: "Java Developer", location: "Gurugram, India", dateRange: "Jul 2015 – Oct 2017", bullets: [
+      ["Developed USSD payment applications for Airtel and Idea using Java Servlets, JSP and Spring.", ["Payments","Core"]],
+      ["Integrated SOAP and RESTful web services.", ["Core"]],
+      ["Improved database query performance by 20% through optimisation.", ["Core"]],
+      ["Increased automated test coverage to 85% and reduced production incidents by 26%.", ["Testing"]]
+    ]}
+  ],
+  education: [
+    { school: "United Kingdom", degree: "MSc in Data Science", dateRange: "2022" },
+    { school: "Maharaja Surajmal Institute of Technology, Delhi, India", degree: "B.Tech in Information Technology", dateRange: "2014" },
+    { school: "Father Agnel Polytechnic, Delhi, India", degree: "Diploma in Computer Science", dateRange: "2011" }
+  ],
+  certifications: [
+    "Microsoft Certified: Azure AI Fundamentals",
+    "Microsoft Certified: Security, Compliance & Identity Fundamentals",
+    "Spring Boot Microservices (LinkedIn Learning)",
+    "Learning Jenkins (LinkedIn Learning)"
+  ],
+  visibleRoles: 3 // roles shown before "Show earlier roles"
+};
+
+/* ---------------- rendering ---------------- */
+const $ = id => document.getElementById(id);
+function el(tag, cls, text){ const n=document.createElement(tag); if(cls) n.className=cls; if(text!==undefined) n.textContent=text; return n; }
+document.documentElement.style.setProperty("--accent", CONFIG.accent);
+
+$("name").textContent = CONFIG.name;
+$("fname").textContent = CONFIG.name;
+$("title").textContent = CONFIG.title;
+$("meta").textContent = CONFIG.location + "  |  " + CONFIG.tagline;
+$("copy").textContent = "© " + new Date().getFullYear() + " " + CONFIG.name + ". All rights reserved.";
+
+function socialLinks(target, withPrimary){
+  const s = CONFIG.social, defs = [
+    ["email", "✉ Email", s.email && "mailto:" + s.email],
+    ["linkedin", "in LinkedIn", s.linkedin],
+    ["github", "⌥ GitHub", s.github],
+    ["youtube", "▶ YouTube", s.youtube]
+  ];
+  defs.forEach(([k,label,href])=>{
+    if(!href) return;
+    const a = el("a", "pill" + (withPrimary && k==="email" ? " primary":""), label);
+    a.href = href;
+    if(k!=="email"){ a.target="_blank"; a.rel="noopener noreferrer"; }
+    target.appendChild(a);
+  });
+}
+socialLinks($("socials"), true);
+socialLinks($("contactLinks"), true);
+
+CONFIG.about.forEach(t => $("aboutText").appendChild(el("p", "", t)));
+CONFIG.skills.forEach(s => $("skills").appendChild(el("span", "chip accent", s)));
+CONFIG.stats.forEach(s => { const d=el("div","stat"); d.appendChild(el("b","",s.value)); d.appendChild(el("span","",s.label)); $("stats").appendChild(d); });
+
+CONFIG.projects.forEach((p,i)=>{
+  const c = el(p.link ? "a" : "div", "card");
+  if(p.link){ c.href=p.link; c.target="_blank"; c.rel="noopener noreferrer"; c.appendChild(el("span","arrow","↗")); }
+  c.appendChild(el("span","num", String(i+1).padStart(2,"0")));
+  c.appendChild(el("h3","",p.name));
+  c.appendChild(el("p","",p.description));
+  const chips = el("div","chips"); chips.style.marginTop="0";
+  p.skills.forEach(s => chips.appendChild(el("span","chip",s)));
+  c.appendChild(chips);
+  $("projectList").appendChild(c);
+});
+
+/* experience with theme filter */
+const state = { tag: "All", expanded: false };
+const allTags = ["All", ...Array.from(new Set(CONFIG.experience.flatMap(j => j.bullets.flatMap(b => b[1]))))];
+allTags.forEach(t => {
+  const b = el("button","",t); b.type="button"; b.dataset.tag=t;
+  b.setAttribute("aria-pressed", t==="All" ? "true":"false");
+  b.addEventListener("click", () => { state.tag=t; renderExperience(); });
+  $("filters").appendChild(b);
+});
+
+function renderExperience(){
+  Array.from($("filters").children).forEach(b => b.setAttribute("aria-pressed", b.dataset.tag===state.tag ? "true":"false"));
+  const box = $("timeline"); box.textContent = "";
+  const filtering = state.tag !== "All";
+  let hiddenRoles = 0, shown = 0;
+  CONFIG.experience.forEach((j, idx) => {
+    const bullets = j.bullets.filter(b => !filtering || b[1].includes(state.tag));
+    if(!bullets.length) return;
+    if(!filtering && !state.expanded && idx >= CONFIG.visibleRoles){ hiddenRoles++; return; }
+    shown++;
+    const job = el("div","job");
+    job.appendChild(el("h3","",j.title));
+    const co = el("div",""); co.appendChild(el("span","co",j.company)); co.appendChild(document.createTextNode(" · " + j.location));
+    job.appendChild(co);
+    job.appendChild(el("div","when",j.dateRange));
+    const ul = el("ul");
+    bullets.forEach(b => {
+      const li = el("li","",b[0]);
+      if(filtering) li.appendChild(el("span","t",state.tag));
+      ul.appendChild(li);
+    });
+    job.appendChild(ul);
+    box.appendChild(job);
+  });
+  if(!shown) box.appendChild(el("p","empty","No matching experience."));
+  if(hiddenRoles){
+    const m = el("button","more","Show earlier roles (" + hiddenRoles + ")"); m.type="button";
+    m.addEventListener("click", () => { state.expanded=true; renderExperience(); });
+    box.appendChild(m);
+  }
+}
+renderExperience();
+
+CONFIG.education.forEach(e => {
+  const d = el("div","edu");
+  d.appendChild(el("h3","",e.degree));
+  d.appendChild(el("div","sub", e.school + " · " + e.dateRange));
+  $("eduList").appendChild(d);
+});
+CONFIG.certifications.forEach(c => $("certList").appendChild(el("span","chip",c)));
+
+/* theme toggle */
+(function(){
+  const root = document.documentElement;
+  let saved = null;
+  try { saved = localStorage.getItem("theme"); } catch(e){}
+  const prefersDark = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
+  root.dataset.theme = saved || (prefersDark ? "dark" : "light");
+  $("theme").addEventListener("click", () => {
+    const next = root.dataset.theme === "dark" ? "light" : "dark";
+    root.dataset.theme = next;
+    try { localStorage.setItem("theme", next); } catch(e){}
+  });
+})();
+
+/* scroll reveal + active nav */
+(function(){
+  const reveals = document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window){
+    const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.08});
+    reveals.forEach(r => io.observe(r));
+    const links = Array.from(document.querySelectorAll("nav a.link"));
+    const spy = new IntersectionObserver(es => es.forEach(e => {
+      if(e.isIntersecting) links.forEach(l => l.classList.toggle("active", l.getAttribute("href")==="#"+e.target.id));
+    }), {rootMargin:"-45% 0px -50% 0px"});
+    document.querySelectorAll("main section").forEach(s => spy.observe(s));
+  } else { reveals.forEach(r => r.classList.add("in")); }
+})();
+</script>
+</body>
+</html>
