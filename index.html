@@ -199,14 +199,12 @@ const CONFIG = {
   accent: "#0f766e",
   social: {
     email: "pmogha2008@gmail.com",
-    linkedin: "https://linkedin.com/in/moghaprateek",
-    github: "https://github.com/moghaprateek",
-    youtube: "https://www.youtube.com/@abroadkick"
+    linkedin: "https://www.linkedin.com/in/moghaprateek/",
+    github: "https://github.com/moghaprateek"
   },
   about: [
     "I'm a Senior Java Engineer with over 10 years of experience designing, building and supporting resilient backend and cloud-native systems across enterprise technology, payments, capital markets and automotive technology.",
-    "My day-to-day is Java 17, Spring Boot, microservices, AWS, Kubernetes and event-driven architecture with Kafka. I work across the full software development lifecycle: architecture, implementation, automated testing, CI/CD, security and production troubleshooting.",
-    "Outside work, I run Abroad Kick, a YouTube channel with practical advice on life in the UK for international students and professionals planning to move or work here."
+    "My day-to-day is Java 17, Spring Boot, microservices, AWS, Kubernetes and event-driven architecture with Kafka. I work across the full software development lifecycle: architecture, implementation, automated testing, CI/CD, security and production troubleshooting."
   ],
   skills: ["Java 17","Spring Boot","Microservices","Apache Kafka","AWS","Kubernetes","Docker","GitLab CI/CD","Spring Security","OAuth 2.0 / JWT","Datadog","JUnit 5"],
   stats: [
@@ -218,8 +216,7 @@ const CONFIG = {
   projects: [
     { name: "Mobile-Money Payments Platform", description: "Backend engineering for Airtel Money and Idea Money platforms serving millions of subscribers, supporting around 200 TPS with a 99.9% SLA under RBI payment guidelines.", skills: ["Java","Spring","Payments","RBI compliance"] },
     { name: "Event-Driven Vulnerability Detection", description: "Pipeline that triggers security scans on code commits and processes results asynchronously, cutting vulnerability detection time by 35%.", skills: ["Kafka","Azure Service Bus","Spring Boot"] },
-    { name: "Cloud-Native & Serverless Java on AWS", description: "Spring Boot microservices on Kubernetes, AWS infrastructure in CDK (Java), and Lambda functions tuned with Powertools and CRaC/SnapStart.", skills: ["AWS CDK","Lambda","Kubernetes","GitLab CI/CD"] },
-    { name: "Abroad Kick (YouTube)", description: "A channel helping international students and professionals plan life, study and work in the UK.", link: "https://www.youtube.com/@abroadkick", skills: ["Content","UK life","Careers"] }
+    { name: "Cloud-Native & Serverless Java on AWS", description: "Spring Boot microservices on Kubernetes, AWS infrastructure in CDK (Java), and Lambda functions tuned with Powertools and CRaC/SnapStart.", skills: ["AWS CDK","Lambda","Kubernetes","GitLab CI/CD"] }
   ],
   experience: [
     { company: "Jaguar Land Rover", title: "Senior Software Engineer", location: "Manchester, UK", dateRange: "Sep 2022 – Present", bullets: [
@@ -295,8 +292,7 @@ function socialLinks(target, withPrimary){
   const s = CONFIG.social, defs = [
     ["email", "✉ Email", s.email && "mailto:" + s.email],
     ["linkedin", "in LinkedIn", s.linkedin],
-    ["github", "⌥ GitHub", s.github],
-    ["youtube", "▶ YouTube", s.youtube]
+    ["github", "⌥ GitHub", s.github]
   ];
   defs.forEach(([k,label,href])=>{
     if(!href) return;
