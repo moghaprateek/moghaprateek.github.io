@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moghaprateek.github.io/sitemap.xml
