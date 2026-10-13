@@ -3,198 +3,232 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prateek Mogha – Senior Software Engineer</title>
-<meta name="description" content="Portfolio of Prateek Mogha, Senior Java Engineer based in Edinburgh. Java 17, Spring Boot, microservices, AWS, Kubernetes and Kafka.">
-<meta property="og:title" content="Prateek Mogha – Senior Software Engineer">
-<meta property="og:description" content="Senior Java Engineer with 10+ years of experience in payments, capital markets and automotive technology.">
+<title>Prateek Mogha – Senior Java Engineer | Spring Boot, AWS, Kafka | Edinburgh, UK</title>
+<meta name="description" content="Prateek Mogha is a Senior Java Engineer in Edinburgh, UK with 10+ years of experience in Spring Boot microservices, AWS, Kubernetes, Kafka and payments. View experience, skills and projects, or download his CV.">
+<meta property="og:title" content="Prateek Mogha – Senior Java Engineer | Spring Boot, AWS, Kafka">
+<meta property="og:description" content="10+ years building Java 17, Spring Boot, microservices, AWS and Kafka systems across payments, capital markets and automotive technology. Based in Edinburgh, UK.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' text-anchor='middle' fill='white'%3E%3C/%3E%3C/text%3E%3C/svg%3E">
+<meta property="og:url" content="https://moghaprateek.github.io/">
+<meta property="og:image" content="https://moghaprateek.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Prateek Mogha, Senior Java Engineer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Prateek Mogha – Senior Java Engineer">
+<meta name="twitter:description" content="Spring Boot, microservices, AWS, Kubernetes and Kafka. Edinburgh, UK.">
+<meta name="twitter:image" content="https://moghaprateek.github.io/og-image.png">
+<meta name="author" content="Prateek Mogha">
+<meta name="keywords" content="Senior Java Developer, Java Engineer, Spring Boot, Microservices, AWS, Kubernetes, Kafka, Backend Engineer, Payments, Edinburgh, UK">
+<link rel="canonical" href="https://moghaprateek.github.io/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Prateek Mogha",
+  "url": "https://moghaprateek.github.io/",
+  "jobTitle": "Senior Software Engineer",
+  "description": "Senior Java Engineer with 10+ years of experience in backend, cloud-native and payments systems.",
+  "worksFor": { "@type": "Organization", "name": "Jaguar Land Rover" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Edinburgh", "addressCountry": "GB" },
+  "alumniOf": [
+    { "@type": "EducationalOrganization", "name": "Maharaja Surajmal Institute of Technology" }
+  ],
+  "knowsAbout": ["Java 17", "Spring Boot", "Microservices", "AWS", "Kubernetes", "Apache Kafka", "Event-driven architecture", "REST APIs", "CI/CD", "Payments"],
+  "sameAs": ["https://www.linkedin.com/in/moghaprateek/", "https://github.com/moghaprateek"]
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3C/svg%3E">
 <style>
 :root{
   --accent:#0f766e;
-  --bg:#fafaf9; --surface:#ffffff; --text:#1c1917; --muted:#57534e; --border:#e7e5e4; --chip:#f0efed;
+  --bg:#f6f6f4; --surface:#ffffff; --text:#1c1917; --muted:#57534e; --border:#e7e5e4; --chip:#f0efed;
   --accent-soft:color-mix(in srgb,var(--accent) 10%,transparent);
-  --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.05);
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05);
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --nav:60px;
 }
 :root[data-theme="dark"]{
-  --bg:#0f1210; --surface:#171b19; --text:#ecefed; --muted:#a3aaa6; --border:#262c29; --chip:#1f2522;
-  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+  --bg:#0d100f; --surface:#161a18; --text:#ecefed; --muted:#a3aaa6; --border:#262c29; --chip:#1f2522;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.35);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
-.wrap{max-width:860px;margin:0 auto;padding:0 20px}
-/* header */
-header.nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(10px);background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--border)}
-header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-.logo{font-family:var(--mono);font-weight:700;text-decoration:none;color:var(--accent);font-size:1.05rem}
-nav{display:flex;align-items:center;gap:4px}
-nav a.link{font-size:.9rem;text-decoration:none;color:var(--muted);padding:6px 10px;border-radius:8px;transition:.15s}
+/* nav */
+header.nav{position:sticky;top:0;z-index:30;height:var(--nav);backdrop-filter:blur(10px);background:color-mix(in srgb,var(--bg) 85%,transparent);border-bottom:1px solid var(--border)}
+header.nav .in{max-width:1360px;margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--mono);font-weight:700;text-decoration:none;color:var(--accent)}
+nav{display:flex;align-items:center;gap:2px}
+nav a.link{font-size:.9rem;text-decoration:none;color:var(--muted);padding:6px 12px;border-radius:8px;transition:.15s}
 nav a.link:hover{color:var(--text);background:var(--chip)}
 nav a.link.active{color:var(--accent);background:var(--accent-soft)}
-.theme{border:1px solid var(--border);background:var(--surface);color:var(--text);width:36px;height:36px;border-radius:10px;cursor:pointer;font-size:1rem;margin-left:6px}
+.theme{display:grid;place-items:center;border:1px solid var(--border);background:var(--surface);color:var(--text);width:36px;height:36px;border-radius:10px;cursor:pointer;margin-left:8px}
 .theme:hover{border-color:var(--accent)}
-@media(max-width:640px){nav a.link{display:none}}
-/* hero */
-.hero{position:relative;overflow:hidden;padding:84px 0 72px;text-align:center;border-bottom:1px solid var(--border)}
-.hero .sym{position:absolute;font-family:var(--mono);color:var(--accent);opacity:.13;font-size:2.2rem;font-weight:700;user-select:none;animation:float 9s ease-in-out infinite}
-@keyframes float{50%{transform:translateY(-14px)}}
-.hero .wrap{position:relative}
-.hello{font-size:1.1rem;color:var(--muted);margin:0 0 6px}
-h1{font-size:clamp(2.2rem,6vw,3.4rem);line-height:1.1;margin:0 0 10px;letter-spacing:-.02em}
-h1 span{color:var(--accent)}
-.role{font-size:1.3rem;color:var(--muted);margin:0}
-.meta{font-family:var(--mono);font-size:.85rem;color:var(--muted);margin:14px 0 28px}
-.socials{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid var(--border);background:var(--surface);border-radius:999px;font-size:.92rem;text-decoration:none;transition:.15s;box-shadow:var(--shadow)}
-.pill:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+/* 3-column shell */
+.shell{max-width:1360px;margin:0 auto;padding:24px;display:grid;grid-template-columns:290px minmax(0,1fr) 290px;gap:24px;align-items:start}
+.panel{position:sticky;top:calc(var(--nav) + 20px);max-height:calc(100vh - var(--nav) - 40px);overflow:auto;display:flex;flex-direction:column;gap:16px;scrollbar-width:thin;padding-bottom:2px}
+main{display:flex;flex-direction:column;gap:20px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+h2{font-size:1.15rem;margin:0 0 16px;display:flex;align-items:center;gap:10px;letter-spacing:-.01em}
+h2::before{content:"";width:18px;height:4px;border-radius:4px;background:var(--accent)}
+.side.panel .card{padding:18px}
+.side h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:12px}
+.side h2::before{display:none}
+/* intro */
+.avatar{width:52px;height:52px;border-radius:15px;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:1.1rem;margin-bottom:10px}
+.intro h1{font-size:1.5rem;line-height:1.2;margin:0;letter-spacing:-.02em}
+.role{color:var(--accent);font-weight:600;margin:2px 0 4px}
+.kw{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin:0 0 8px;line-height:1.5}
+.loc{color:var(--muted);font-size:.9rem;margin:0 0 4px}
+.cur{color:var(--muted);font-size:.82rem;margin:0 0 12px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-bottom:16px}
+.badge i{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.25)}
+.links{display:flex;flex-direction:column;gap:7px}
+.pill{display:flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid var(--border);background:var(--bg);border-radius:12px;font-size:.9rem;text-decoration:none;transition:.15s}
+.pill:hover{border-color:var(--accent);color:var(--accent)}
 .pill.primary{background:var(--accent);border-color:var(--accent);color:#fff}
 .pill.primary:hover{color:#fff;filter:brightness(1.08)}
-/* sections */
-section{padding:64px 0}
-section+section{border-top:1px solid var(--border)}
-h2{font-size:1.7rem;margin:0 0 24px;letter-spacing:-.01em;display:flex;align-items:center;gap:12px}
-h2::before{content:"";width:28px;height:4px;border-radius:4px;background:var(--accent)}
-.about p{margin:0 0 14px;color:var(--muted);font-size:1.04rem}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.chip{font-family:var(--mono);font-size:.8rem;padding:5px 11px;border-radius:8px;background:var(--chip);border:1px solid var(--border)}
-.chip.accent{background:var(--accent-soft);border-color:transparent;color:var(--accent)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:28px}
-.stat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
-.stat b{display:block;font-size:1.6rem;color:var(--accent);line-height:1.2}
-.stat span{font-size:.85rem;color:var(--muted)}
-/* projects */
-.grid{display:grid;gap:16px}
-.card{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow);transition:.18s;position:relative}
-a.card:hover{transform:translateY(-3px);border-color:var(--accent)}
-.card .num{font-family:var(--mono);color:var(--accent);font-size:.85rem;font-weight:700}
-.card h3{margin:2px 0 6px;font-size:1.15rem}
-.card p{margin:0 0 12px;color:var(--muted);font-size:.97rem}
-.card .arrow{position:absolute;top:20px;right:22px;color:var(--muted)}
-/* experience */
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin:-8px 0 28px}
-.filters button{font:inherit;font-size:.82rem;cursor:pointer;padding:5px 13px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--muted);transition:.15s}
+.pill b{font-family:var(--mono);width:18px;text-align:center}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--mono);font-size:.72rem;padding:3px 8px;border-radius:7px;background:var(--chip);border:1px solid var(--border)}
+.sg{margin-bottom:12px}.sg:last-child{margin-bottom:0}
+.sg h3{font-size:.8rem;margin:0 0 7px;color:var(--text)}
+.cert{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;margin-bottom:10px;color:var(--muted)}
+.cert:last-child{margin-bottom:0}
+.cert::before{content:"✓";color:var(--accent);font-weight:700}
+.edu{margin-bottom:9px}.edu:last-child{margin-bottom:0}
+.edu b{display:block;font-size:.92rem}
+.edu span{font-size:.82rem;color:var(--muted)}
+/* main content */
+.about p{margin:0 0 12px;color:var(--muted)}
+.about p:last-of-type{margin-bottom:0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
+.stat{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:12px}
+.stat b{display:block;font-size:1.25rem;color:var(--accent);line-height:1.2}
+.stat span{font-size:.78rem;color:var(--muted);line-height:1.3;display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.proj{display:block;text-decoration:none;background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:16px;position:relative;transition:.18s}
+a.proj:hover{transform:translateY(-2px);border-color:var(--accent)}
+.proj .num{font-family:var(--mono);color:var(--accent);font-size:.75rem;font-weight:700}
+.proj h3{margin:2px 0 6px;font-size:1rem}
+.proj p{margin:0 0 10px;color:var(--muted);font-size:.9rem}
+.proj .arrow{position:absolute;top:14px;right:16px;color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin:-4px 0 20px}
+.filters button{font:inherit;font-size:.78rem;cursor:pointer;padding:4px 12px;border-radius:999px;border:1px solid var(--border);background:var(--bg);color:var(--muted);transition:.15s}
 .filters button:hover{border-color:var(--accent);color:var(--accent)}
 .filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
-.timeline{position:relative;margin-left:8px;padding-left:28px;border-left:2px solid var(--border)}
-.job{position:relative;margin-bottom:34px}
-.job::before{content:"";position:absolute;left:-37px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
-.job h3{margin:0;font-size:1.15rem}
+.timeline{margin-left:6px;padding-left:24px;border-left:2px solid var(--border)}
+.job{position:relative;margin-bottom:26px}
+.job:last-child{margin-bottom:0}
+.job::before{content:"";position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
+.job h3{margin:0;font-size:1.05rem}
 .job .co{color:var(--accent);font-weight:600}
-.job .when{font-family:var(--mono);font-size:.8rem;color:var(--muted);margin:2px 0 10px}
+.job .when{font-family:var(--mono);font-size:.76rem;color:var(--muted);margin:1px 0 8px}
 .job ul{margin:0;padding-left:18px;color:var(--muted)}
-.job li{margin-bottom:6px;font-size:.97rem}
-.job li .t{display:inline-block;font-family:var(--mono);font-size:.68rem;margin-left:6px;padding:1px 7px;border-radius:6px;background:var(--chip);vertical-align:1px}
-.more{font:inherit;cursor:pointer;margin-top:4px;padding:9px 18px;border-radius:10px;border:1px dashed var(--accent);background:transparent;color:var(--accent)}
+.job li{margin-bottom:5px;font-size:.92rem}
+.job li .t{font-family:var(--mono);font-size:.66rem;margin-left:6px;padding:1px 6px;border-radius:5px;background:var(--chip)}
+.more{font:inherit;cursor:pointer;margin-top:18px;padding:8px 16px;border-radius:10px;border:1px dashed var(--accent);background:transparent;color:var(--accent)}
 .more:hover{background:var(--accent-soft)}
 .empty{color:var(--muted)}
-/* education */
-.edu{margin-bottom:18px}
-.edu h3{margin:0;font-size:1.05rem}
-.edu .sub{color:var(--muted);font-size:.93rem}
-.certs{margin-top:34px}
-.certs h3{font-size:1.05rem;margin:0 0 12px}
-/* contact + footer */
-.cta{text-align:center}
-.cta p{color:var(--muted);max-width:520px;margin:0 auto 22px}
-.cta h2{justify-content:center}
-footer{border-top:1px solid var(--border);padding:34px 0;text-align:center;color:var(--muted);font-size:.9rem}
-footer .fn{display:flex;gap:16px;justify-content:center;margin:12px 0}
-footer .fn a{text-decoration:none}
-footer .fn a:hover{color:var(--accent)}
-/* reveal */
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}
+.lede{margin:-6px 0 14px;color:var(--muted);font-size:.92rem}.lede a{color:var(--accent)}
+.contact p{color:var(--muted);margin:0 0 14px}
+.contact .row{display:flex;flex-wrap:wrap;gap:10px}
+.contact .pill{display:inline-flex}
+footer{max-width:1360px;margin:0 auto;padding:8px 24px 32px;text-align:center;color:var(--muted);font-size:.85rem}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .45s,transform .45s}
 .reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero .sym{animation:none}html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+/* tablet: side panels sit above content, side by side */
+@media(max-width:1100px){
+  .shell{grid-template-columns:1fr 1fr}
+  .panel{position:static;max-height:none;overflow:visible}
+  main{grid-column:1 / -1;order:3}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+/* phone: single column, interleaved order */
+@media(max-width:700px){
+  .shell{display:flex;flex-direction:column;align-items:stretch;padding:16px;gap:16px}
+  .panel,main{display:contents}
+  .intro{order:1}#about{order:2}.skills{order:3}#experience{order:4}#projects{order:5}#github{order:6}.education{order:7}.certs{order:8}#contact{order:9}
+  nav a.link{display:none}
+}
 </style>
 </head>
 <body>
-<header class="nav">
-  <div class="wrap">
-    <a class="logo" href="#top" aria-label="Home">&lt;PM/&gt;</a>
-    <nav id="nav">
-      <a class="link" href="#about">About</a>
-      <a class="link" href="#projects">Projects</a>
-      <a class="link" href="#experience">Experience</a>
-      <a class="link" href="#education">Education</a>
-      <a class="link" href="#contact">Contact</a>
-      <button class="theme" id="theme" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
-    </nav>
-  </div>
-</header>
+<header class="nav"><div class="in">
+  <a class="logo" href="#top" aria-label="Home">&lt;PM/&gt;</a>
+  <nav id="nav">
+    <a class="link" href="#about">About</a>
+    <a class="link" href="#experience">Experience</a>
+    <a class="link" href="#projects">Projects</a>
+    <a class="link" href="#github">GitHub</a>
+    <a class="link" href="#contact">Contact</a>
+    <button class="theme" id="theme" aria-label="Toggle dark mode" title="Toggle dark mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg></button>
+  </nav>
+</div></header>
 
-<main id="top">
-  <div class="hero">
-    <span class="sym" style="left:6%;top:18%">&lt;/&gt;</span>
-    <span class="sym" style="left:84%;top:14%;animation-delay:-3s">=&gt;</span>
-    <span class="sym" style="left:12%;top:68%;animation-delay:-5s">{ }</span>
-    <span class="sym" style="left:88%;top:66%;animation-delay:-2s">::</span>
-    <span class="sym" style="left:46%;top:8%;animation-delay:-6s">;</span>
-    <div class="wrap">
-      <p class="hello">Hello! 👋</p>
-      <h1>I'm <span id="name"></span></h1>
+<div class="shell" id="top">
+  <aside class="panel side" aria-label="Profile">
+    <section class="card intro">
+      <div class="avatar" id="avatar"></div>
+      <h1 id="name"></h1>
       <p class="role" id="title"></p>
-      <p class="meta" id="meta"></p>
-      <div class="socials" id="socials"></div>
-    </div>
-  </div>
+      <p class="kw" id="kw"></p>
+      <p class="loc" id="loc"></p>
+      <p class="cur" id="cur"></p>
+      <span class="badge"><i></i>Open to senior backend roles</span>
+      <div class="links" id="socials"></div>
+    </section>
+    <section class="card education"><h2>Education</h2><div id="eduList"></div></section>
+  </aside>
 
-  <section id="about" class="about"><div class="wrap reveal">
-    <h2>About Me</h2>
-    <div id="aboutText"></div>
-    <div class="chips" id="skills"></div>
-    <div class="stats" id="stats"></div>
-  </div></section>
+  <main>
+    <section class="card about reveal" id="about">
+      <h2>About Me</h2>
+      <div id="aboutText"></div>
+      <div class="stats" id="stats"></div>
+    </section>
+    <section class="card reveal" id="experience">
+      <h2>Experience</h2>
+      <div class="filters" id="filters" role="group" aria-label="Filter experience by theme"></div>
+      <div class="timeline" id="timeline"></div>
+    </section>
+    <section class="card reveal" id="projects">
+      <h2>Projects</h2>
+      <div class="grid" id="projectList"></div>
+    </section>
+    <section class="card reveal" id="github">
+      <h2>GitHub Projects</h2>
+      <p class="lede">Smaller personal projects, all public on my <a href="https://github.com/moghaprateek" target="_blank" rel="noopener noreferrer">GitHub profile</a>.</p>
+      <div class="grid" id="repoList"></div>
+    </section>
+    <section class="card contact reveal" id="contact">
+      <h2>Let's Connect</h2>
+      <p>Open to senior backend engineering roles across the UK. Email or LinkedIn is the best way to reach me.</p>
+      <div class="row" id="contactLinks"></div>
+    </section>
+  </main>
 
-  <section id="projects"><div class="wrap reveal">
-    <h2>Projects</h2>
-    <div class="grid" id="projectList"></div>
-  </div></section>
-
-  <section id="experience"><div class="wrap reveal">
-    <h2>Experience</h2>
-    <div class="filters" id="filters" role="group" aria-label="Filter experience by theme"></div>
-    <div class="timeline" id="timeline"></div>
-  </div></section>
-
-  <section id="education"><div class="wrap reveal">
-    <h2>Education</h2>
-    <div id="eduList"></div>
-    <div class="certs">
-      <h3>Certifications</h3>
-      <div class="chips" id="certList"></div>
-    </div>
-  </div></section>
-
-  <section id="contact" class="cta"><div class="wrap reveal">
-    <h2>Let's Connect</h2>
-    <p>Open to senior backend engineering roles across the UK. The best way to reach me is email or LinkedIn.</p>
-    <div class="socials" id="contactLinks"></div>
-  </div></section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <strong id="fname"></strong><br>Senior Software Engineer
-    <div class="fn">
-      <a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a>
-    </div>
-    <div id="copy"></div>
-  </div>
-</footer>
+  <aside class="panel side" aria-label="Skills and certifications">
+    <section class="card skills"><h2>Skills</h2><div id="skillGroups"></div></section>
+    <section class="card certs"><h2>Certifications</h2><div id="certList"></div></section>
+  </aside>
+</div>
+<footer><span id="copy"></span></footer>
 <noscript><p style="text-align:center;padding:20px">Please enable JavaScript to view this portfolio.</p></noscript>
 
 <script>
-/* ============================================================
-   EDIT YOUR CONTENT HERE – the rest of the file renders it.
-   ============================================================ */
+/* EDIT YOUR CONTENT HERE – the rest renders it. */
 const CONFIG = {
   name: "Prateek Mogha",
   title: "Senior Software Engineer",
   location: "Edinburgh, United Kingdom",
+  keywordsLine: "Java Developer · Backend Engineer · Microservices · Payments",
+  currently: "Currently Senior Software Engineer at Jaguar Land Rover, Manchester",
+  cv: "Prateek_Mogha_CV.pdf",
   tagline: "Java 17 · Spring Boot · Microservices · AWS · Kubernetes · Kafka",
   accent: "#0f766e",
   social: {
@@ -207,6 +241,13 @@ const CONFIG = {
     "My day-to-day is Java 17, Spring Boot, microservices, AWS, Kubernetes and event-driven architecture with Kafka. I work across the full software development lifecycle: architecture, implementation, automated testing, CI/CD, security and production troubleshooting."
   ],
   skills: ["Java 17","Spring Boot","Microservices","Apache Kafka","AWS","Kubernetes","Docker","GitLab CI/CD","Spring Security","OAuth 2.0 / JWT","Datadog","JUnit 5"],
+  skillGroups: [
+    { name: "Backend", items: ["Java 17","Spring Boot 3.5","Spring Cloud","Spring Security","Spring Batch","Microservices"] },
+    { name: "Cloud & DevOps", items: ["AWS CDK","Lambda","DynamoDB","Kubernetes","Docker","GitLab CI/CD","Jenkins"] },
+    { name: "Messaging", items: ["Apache Kafka","AWS SQS","Azure Service Bus"] },
+    { name: "Security", items: ["OAuth 2.0","JWT","ForgeRock","Snyk","Trivy"] },
+    { name: "Testing & Observability", items: ["JUnit 5","Spock","Mockito","PIT","Datadog"] }
+  ],
   stats: [
     { value: "10+", label: "years in software engineering" },
     { value: "~200 TPS", label: "payments at 99.9% SLA" },
@@ -217,6 +258,11 @@ const CONFIG = {
     { name: "Mobile-Money Payments Platform", description: "Backend engineering for Airtel Money and Idea Money platforms serving millions of subscribers, supporting around 200 TPS with a 99.9% SLA under RBI payment guidelines.", skills: ["Java","Spring","Payments","RBI compliance"] },
     { name: "Event-Driven Vulnerability Detection", description: "Pipeline that triggers security scans on code commits and processes results asynchronously, cutting vulnerability detection time by 35%.", skills: ["Kafka","Azure Service Bus","Spring Boot"] },
     { name: "Cloud-Native & Serverless Java on AWS", description: "Spring Boot microservices on Kubernetes, AWS infrastructure in CDK (Java), and Lambda functions tuned with Powertools and CRaC/SnapStart.", skills: ["AWS CDK","Lambda","Kubernetes","GitLab CI/CD"] }
+  ],
+  repos: [
+    { name: "DataMining-Project", description: "Python notebooks analysing Lending Club loan data, with an automated exploratory data analysis report generated using Sweetviz.", link: "https://github.com/moghaprateek/DataMining-Project", skills: ["Python","Jupyter","Data Mining"] },
+    { name: "firebaseCRUD", description: "A basic demo of create, read, update and delete operations against Firebase, built with HTML, CSS and JavaScript.", link: "https://github.com/moghaprateek/firebaseCRUD", skills: ["JavaScript","Firebase","HTML/CSS"] },
+    { name: "singapore-dashboard", description: "A front-end dashboard project built with HTML, CSS and JavaScript.", link: "https://github.com/moghaprateek/singapore-dashboard", skills: ["JavaScript","HTML/CSS"] },
   ],
   experience: [
     { company: "Jaguar Land Rover", title: "Senior Software Engineer", location: "Manchester, UK", dateRange: "Sep 2022 – Present", bullets: [
@@ -283,45 +329,60 @@ function el(tag, cls, text){ const n=document.createElement(tag); if(cls) n.clas
 document.documentElement.style.setProperty("--accent", CONFIG.accent);
 
 $("name").textContent = CONFIG.name;
-$("fname").textContent = CONFIG.name;
+$("avatar").textContent = CONFIG.name.split(" ").map(w => w[0]).join("");
 $("title").textContent = CONFIG.title;
-$("meta").textContent = CONFIG.location + "  |  " + CONFIG.tagline;
-$("copy").textContent = "© " + new Date().getFullYear() + " " + CONFIG.name + ". All rights reserved.";
+$("loc").textContent = CONFIG.location;
+$("kw").textContent = CONFIG.keywordsLine;
+$("cur").textContent = CONFIG.currently;
+$("copy").textContent = "© " + new Date().getFullYear() + " " + CONFIG.name;
 
-function socialLinks(target, withPrimary){
+function socialLinks(target, inline){
   const s = CONFIG.social, defs = [
-    ["email", "✉ Email", s.email && "mailto:" + s.email],
-    ["linkedin", "in LinkedIn", s.linkedin],
-    ["github", "⌥ GitHub", s.github]
+    ["email", "✉", "Email", s.email && "mailto:" + s.email],
+    ["linkedin", "in", "LinkedIn", s.linkedin],
+    ["github", "⌥", "GitHub", s.github],
+    ["cv", "⇩", "Download CV", CONFIG.cv]
   ];
-  defs.forEach(([k,label,href])=>{
+  defs.forEach(([k,icon,label,href])=>{
     if(!href) return;
-    const a = el("a", "pill" + (withPrimary && k==="email" ? " primary":""), label);
+    const a = el("a", "pill" + (k==="email" ? " primary":""));
+    a.appendChild(el("b","",icon)); a.appendChild(document.createTextNode(label));
     a.href = href;
-    if(k!=="email"){ a.target="_blank"; a.rel="noopener noreferrer"; }
+    if(k==="cv"){ a.setAttribute("download",""); a.target="_blank"; a.rel="noopener"; }
+    else if(k!=="email"){ a.target="_blank"; a.rel="noopener noreferrer"; }
     target.appendChild(a);
   });
 }
-socialLinks($("socials"), true);
-socialLinks($("contactLinks"), true);
+socialLinks($("socials")); socialLinks($("contactLinks"));
 
-CONFIG.about.forEach(t => $("aboutText").appendChild(el("p", "", t)));
-CONFIG.skills.forEach(s => $("skills").appendChild(el("span", "chip accent", s)));
+CONFIG.about.forEach(t => $("aboutText").appendChild(el("p","",t)));
 CONFIG.stats.forEach(s => { const d=el("div","stat"); d.appendChild(el("b","",s.value)); d.appendChild(el("span","",s.label)); $("stats").appendChild(d); });
 
-CONFIG.projects.forEach((p,i)=>{
-  const c = el(p.link ? "a" : "div", "card");
-  if(p.link){ c.href=p.link; c.target="_blank"; c.rel="noopener noreferrer"; c.appendChild(el("span","arrow","↗")); }
-  c.appendChild(el("span","num", String(i+1).padStart(2,"0")));
-  c.appendChild(el("h3","",p.name));
-  c.appendChild(el("p","",p.description));
-  const chips = el("div","chips"); chips.style.marginTop="0";
-  p.skills.forEach(s => chips.appendChild(el("span","chip",s)));
-  c.appendChild(chips);
-  $("projectList").appendChild(c);
+CONFIG.skillGroups.forEach(g => {
+  const d = el("div","sg"); d.appendChild(el("h3","",g.name));
+  const c = el("div","chips"); g.items.forEach(i => c.appendChild(el("span","chip",i)));
+  d.appendChild(c); $("skillGroups").appendChild(d);
+});
+CONFIG.certifications.forEach(c => $("certList").appendChild(el("div","cert",c)));
+CONFIG.education.forEach(e => {
+  const d = el("div","edu"); d.appendChild(el("b","",e.degree)); d.appendChild(el("span","",e.school + " · " + e.dateRange));
+  $("eduList").appendChild(d);
 });
 
-/* experience with theme filter */
+function cards(list, target, numbered){
+  list.forEach((p,i)=>{
+    const c = el(p.link ? "a" : "div", "proj");
+    if(p.link){ c.href=p.link; c.target="_blank"; c.rel="noopener noreferrer"; c.appendChild(el("span","arrow","↗")); }
+    c.appendChild(el("span","num", numbered ? String(i+1).padStart(2,"0") : "repo"));
+    c.appendChild(el("h3","",p.name));
+    c.appendChild(el("p","",p.description));
+    const chips = el("div","chips"); p.skills.forEach(x => chips.appendChild(el("span","chip",x)));
+    c.appendChild(chips); $(target).appendChild(c);
+  });
+}
+cards(CONFIG.projects,"projectList",true);
+cards(CONFIG.repos,"repoList",false);
+
 const state = { tag: "All", expanded: false };
 const allTags = ["All", ...Array.from(new Set(CONFIG.experience.flatMap(j => j.bullets.flatMap(b => b[1]))))];
 allTags.forEach(t => {
@@ -330,55 +391,38 @@ allTags.forEach(t => {
   b.addEventListener("click", () => { state.tag=t; renderExperience(); });
   $("filters").appendChild(b);
 });
-
 function renderExperience(){
   Array.from($("filters").children).forEach(b => b.setAttribute("aria-pressed", b.dataset.tag===state.tag ? "true":"false"));
   const box = $("timeline"); box.textContent = "";
   const filtering = state.tag !== "All";
-  let hiddenRoles = 0, shown = 0;
+  let hidden = 0, shown = 0;
   CONFIG.experience.forEach((j, idx) => {
     const bullets = j.bullets.filter(b => !filtering || b[1].includes(state.tag));
     if(!bullets.length) return;
-    if(!filtering && !state.expanded && idx >= CONFIG.visibleRoles){ hiddenRoles++; return; }
+    if(!filtering && !state.expanded && idx >= CONFIG.visibleRoles){ hidden++; return; }
     shown++;
     const job = el("div","job");
     job.appendChild(el("h3","",j.title));
     const co = el("div",""); co.appendChild(el("span","co",j.company)); co.appendChild(document.createTextNode(" · " + j.location));
-    job.appendChild(co);
-    job.appendChild(el("div","when",j.dateRange));
+    job.appendChild(co); job.appendChild(el("div","when",j.dateRange));
     const ul = el("ul");
-    bullets.forEach(b => {
-      const li = el("li","",b[0]);
-      if(filtering) li.appendChild(el("span","t",state.tag));
-      ul.appendChild(li);
-    });
-    job.appendChild(ul);
-    box.appendChild(job);
+    bullets.forEach(b => { const li = el("li","",b[0]); if(filtering) li.appendChild(el("span","t",state.tag)); ul.appendChild(li); });
+    job.appendChild(ul); box.appendChild(job);
   });
   if(!shown) box.appendChild(el("p","empty","No matching experience."));
-  if(hiddenRoles){
-    const m = el("button","more","Show earlier roles (" + hiddenRoles + ")"); m.type="button";
+  if(hidden){
+    const m = el("button","more","Show earlier roles (" + hidden + ")"); m.type="button";
     m.addEventListener("click", () => { state.expanded=true; renderExperience(); });
     box.appendChild(m);
   }
 }
 renderExperience();
 
-CONFIG.education.forEach(e => {
-  const d = el("div","edu");
-  d.appendChild(el("h3","",e.degree));
-  d.appendChild(el("div","sub", e.school + " · " + e.dateRange));
-  $("eduList").appendChild(d);
-});
-CONFIG.certifications.forEach(c => $("certList").appendChild(el("span","chip",c)));
-
-/* theme toggle */
 (function(){
-  const root = document.documentElement;
-  let saved = null;
+  const root = document.documentElement; let saved = null;
   try { saved = localStorage.getItem("theme"); } catch(e){}
-  const prefersDark = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
-  root.dataset.theme = saved || (prefersDark ? "dark" : "light");
+  const dark = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
+  root.dataset.theme = saved || (dark ? "dark" : "light");
   $("theme").addEventListener("click", () => {
     const next = root.dataset.theme === "dark" ? "light" : "dark";
     root.dataset.theme = next;
@@ -386,16 +430,15 @@ CONFIG.certifications.forEach(c => $("certList").appendChild(el("span","chip",c)
   });
 })();
 
-/* scroll reveal + active nav */
 (function(){
   const reveals = document.querySelectorAll(".reveal");
   if("IntersectionObserver" in window){
-    const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.08});
+    const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.05});
     reveals.forEach(r => io.observe(r));
     const links = Array.from(document.querySelectorAll("nav a.link"));
     const spy = new IntersectionObserver(es => es.forEach(e => {
       if(e.isIntersecting) links.forEach(l => l.classList.toggle("active", l.getAttribute("href")==="#"+e.target.id));
-    }), {rootMargin:"-45% 0px -50% 0px"});
+    }), {rootMargin:"-40% 0px -55% 0px"});
     document.querySelectorAll("main section").forEach(s => spy.observe(s));
   } else { reveals.forEach(r => r.classList.add("in")); }
 })();
