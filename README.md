@@ -5,7 +5,7 @@ Java 17, Spring Boot, microservices, AWS, Kubernetes and Kafka, with experience 
 
 **Live site:** https://moghaprateek.github.io
 **LinkedIn:** https://www.linkedin.com/in/moghaprateek/
-**Version:** 1.7.1 (see [CHANGELOG.md](CHANGELOG.md))
+**Version:** 1.8.0 (see [CHANGELOG.md](CHANGELOG.md))
 
 ![Portfolio screenshot](docs/screenshot.png)
 

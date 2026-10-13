@@ -61,6 +61,8 @@ const CONFIG = {
     { name: "DataMining-Project", description: "Python notebooks analysing Lending Club loan data, with an automated exploratory data analysis report generated using Sweetviz.", link: "https://github.com/moghaprateek/DataMining-Project", skills: ["Python","Jupyter","Data Mining"] },
     { name: "firebaseCRUD", description: "A basic demo of create, read, update and delete operations against Firebase, built with HTML, CSS and JavaScript.", link: "https://github.com/moghaprateek/firebaseCRUD", skills: ["JavaScript","Firebase","HTML/CSS"] },
     { name: "singapore-dashboard", description: "A front-end dashboard project built with HTML, CSS and JavaScript.", link: "https://github.com/moghaprateek/singapore-dashboard", skills: ["JavaScript","HTML/CSS"] },
+    { name: "Game_Recommendation_System", description: "Game recommendation engine built on the Steam games dataset, using hybrid filtering to generate recommendations. Includes the Python code, presentation and poster.", link: "https://github.com/moghaprateek/Game_Recommendation_System", skills: ["Python","Jupyter","Recommender Systems"] },
+    { name: "Cricket-Mud-Games", description: "A Python cricket game run from the terminal. Teams, bowlers, players and saved sessions are held in data files, and the number of overs is configurable. Includes a test report.", link: "https://github.com/moghaprateek/Cricket-Mud-Games", skills: ["Python","File Handling","Unit Testing"] },
   ],
   // ---- Work experience, newest first ----
   experience: [

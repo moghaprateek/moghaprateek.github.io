@@ -2,6 +2,9 @@
 
 All notable changes to this portfolio. Newest first. Versions follow `major.minor.patch`.
 
+## 1.8.0 - 2026-10-13
+- GitHub Projects: added Game_Recommendation_System and Cricket-Mud-Games (now 5 projects).
+
 ## 1.7.1 - 2026-10-13
 - Left sidebar no longer scrolls: it scales to fit the screen height, so the intro, skills, education and certifications are always fully visible.
 - Sidebar is narrower, giving the content on the right more room.
