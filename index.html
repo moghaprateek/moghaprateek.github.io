@@ -407,6 +407,44 @@ footer{max-width:1680px}
   nav a.link .ic{width:18px;height:18px}
   .shell{padding-bottom:84px}
 }
+
+/* ================= TWO-COLUMN: ONE SIDEBAR + SCROLLING CONTENT ================= */
+.shell{max-width:1560px;grid-template-columns:clamp(320px,23vw,390px) minmax(0,1fr);gap:24px}
+.shell>.panel{grid-column:1}
+.shell>main{grid-column:2}
+.panel{scrollbar-width:thin;scrollbar-color:rgba(16,185,129,.45) transparent;padding-right:4px}
+@media(min-width:1101px){.panel{-webkit-mask-image:linear-gradient(#000 calc(100% - 28px),transparent);mask-image:linear-gradient(#000 calc(100% - 28px),transparent);padding-bottom:28px}}
+.intro .links .pill .short{display:none}
+@media(min-width:1500px){.duo{grid-auto-flow:column}}
+@media(max-width:1100px){
+  .shell{grid-template-columns:1fr}
+  .shell>.panel,.shell>main{grid-column:1}
+  .panel{display:grid;grid-template-columns:1fr 1fr;align-items:start}
+  .panel .intro{grid-column:1/-1}
+  main{order:3}
+}
+@media(max-width:700px){
+  .panel{display:contents}
+  .shell>.panel,.shell>main{grid-column:auto}
+  /* icon on top, label underneath: four equal buttons, no overlap */
+  .intro .links{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+  .intro .links .pill,.intro .links .k-email,.intro .links .k-linkedin,.intro .links .k-github{flex-direction:column;justify-content:center;align-items:center;gap:3px;padding:9px 2px;min-height:58px;font-size:.74rem;white-space:nowrap;text-align:center}
+  .intro .links .pill b{width:auto;font-size:1.1rem;line-height:1}
+  .intro .links .k-linkedin .lbl,.intro .links .k-github .lbl{display:inline}
+  .intro .links .pill .full{display:none}
+  .intro .links .pill .short{display:inline}
+  .intro .links .k-email{order:1}.intro .links .k-linkedin{order:2}.intro .links .k-github{order:3}.intro .links .k-cv{order:4}
+}
+
+/* ===== WIDE SIDEBAR: intro, skills, then education | certifications ===== */
+@media(min-width:1101px){
+  .shell{max-width:1680px;grid-template-columns:clamp(520px,34vw,600px) minmax(0,1fr)}
+  .shell>.panel{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:12px;-webkit-mask-image:none;mask-image:none;padding-bottom:2px}
+  .panel .intro,.panel .skills{grid-column:1/-1}
+  .shell>.panel{gap:10px}.shell>.panel .card{padding:13px 16px}.panel .sg{margin-bottom:7px}.panel .cert{margin-bottom:5px}.panel .badge{margin-bottom:9px}.panel .cur{margin-bottom:8px}
+  .panel .intro .links{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .panel .intro .links .pill{padding:8px 6px;gap:6px;font-size:.8rem;justify-content:center}
+}
 /* browsers without backdrop-filter: fall back to near-solid cards */
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
   .card,header.nav{background:var(--surface)}
@@ -428,7 +466,7 @@ footer{max-width:1680px}
 </div></header>
 
 <div class="shell" id="top">
-  <aside class="panel side" aria-label="Profile">
+  <aside class="panel side" aria-label="Profile, skills and education">
     <section class="card intro">
       <div class="idrow">
         <div class="avatar" id="avatar"></div>
@@ -444,7 +482,10 @@ footer{max-width:1680px}
       <span class="badge"><i></i>Open to senior backend roles</span>
       <div class="links" id="socials"></div>
     </section>
+
+    <section class="card skills"><h2>Skills</h2><div id="skillGroups"></div></section>
     <section class="card education"><h2>Education</h2><div id="eduList"></div></section>
+    <section class="card certs"><h2>Certifications</h2><div id="certList"></div></section>
   </aside>
 
   <main>
@@ -476,10 +517,6 @@ footer{max-width:1680px}
     </section>
   </main>
 
-  <aside class="panel side" aria-label="Skills and certifications">
-    <section class="card skills"><h2>Skills</h2><div id="skillGroups"></div></section>
-    <section class="card certs"><h2>Certifications</h2><div id="certList"></div></section>
-  </aside>
 </div>
 <footer><span id="copy"></span></footer>
 <noscript><p style="text-align:center;padding:20px">Please enable JavaScript to view this portfolio.</p></noscript>
@@ -511,7 +548,7 @@ function socialLinks(target, inline){
     if(!href) return;
     const a = el("a", "pill k-"+k + (k==="email" ? " primary":""));
     a.setAttribute("aria-label",label);
-    a.appendChild(el("b","",icon)); a.appendChild(el("span","lbl",label));
+    a.appendChild(el("b","",icon)); const lb=el("span","lbl",label); if(k==="cv"){lb.textContent="";lb.appendChild(el("span","full","Download CV"));lb.appendChild(el("span","short","CV"));} a.appendChild(lb);
     a.href = href;
     if(k==="cv"){ a.setAttribute("download",""); a.target="_blank"; a.rel="noopener"; }
     else if(k!=="email"){ a.target="_blank"; a.rel="noopener noreferrer"; }

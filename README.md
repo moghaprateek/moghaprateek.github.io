@@ -12,12 +12,12 @@ Java 17, Spring Boot, microservices, AWS, Kubernetes and Kafka, with experience 
 
 A single-page portfolio built with plain HTML, CSS and JavaScript. There is no framework and no build step, so it publishes straight from GitHub Pages.
 
-- Three-column dashboard layout that uses wide screens (up to 1680px): profile and education (left), content (middle), skills and certifications (right). The side panels stay in place while the middle scrolls. Projects and GitHub sit side by side on very wide screens.
+- Two-column dashboard layout that uses wide screens (up to 1680px): a fixed sidebar on the left (intro, skills, then education and certifications side by side) and the content on the right, which is the only part that scrolls. Projects and GitHub sit side by side on very wide screens.
 - Floating pill menu on desktop and an iOS-style bottom tab bar on phones.
 - Experience timeline with filter buttons by theme (Cloud, Security, Payments and so on) and a "Show more" toggle for long bullet lists.
 - Projects, GitHub projects, contact links and a CV download button.
 - Dark and light mode, remembered per visitor.
-- Responsive: side panels stack above the content on tablets. On phones everything is a single column with a short intro card, a one-row filter, and collapsible Skills and Certifications.
+- Responsive: the sidebar stacks above the content on tablets. On phones everything is a single column with a short intro card, a one-row filter, and collapsible Skills and Certifications.
 - Search and sharing support: page title and description, structured data, a social preview image, `robots.txt` and `sitemap.xml`.
 
 ## Files
@@ -30,6 +30,7 @@ A single-page portfolio built with plain HTML, CSS and JavaScript. There is no f
 | `og-image.png` | Preview image shown when the link is shared (1200 x 630). |
 | `robots.txt`, `sitemap.xml` | Search engine files. |
 | `docs/screenshot.png` | Screenshot used in this README. |
+| `CHANGELOG.md` | Version history. Add an entry for each release. |
 
 ## Updating the site
 
